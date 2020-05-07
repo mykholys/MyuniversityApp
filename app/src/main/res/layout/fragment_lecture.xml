@@ -5,12 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.LectureFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/tv_frag"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/LectureFragment_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="@dimen/_25ssp"/>
-
+        android:clipToPadding="false"
+        android:padding="@dimen/_10sdp"
+        android:scrollbarStyle="outsideOverlay" />
 </FrameLayout>

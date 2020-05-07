@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_65sdp"
+    android:elevation="@dimen/_3sdp"
+    app:cardCornerRadius="@dimen/_15sdp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+
+    >
+
+    <RelativeLayout
+        android:id="@+id/rec_lecture_ly"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_65sdp"
+        android:layout_gravity="center_vertical"
+        android:padding="@dimen/_10sdp"
+
+        >
+
+        <ImageView
+            android:id="@+id/rec_lecture_iv"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_lec"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/rec_lecture_tv_lec_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toEndOf="@+id/rec_lecture_iv"
+            android:fontFamily="@font/montserrat_medium"
+            android:lines="1"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+             />
+
+        <ImageView
+            android:id="@+id/rec_lecture_iv_download"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_19sdp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_download"
+            android:layout_centerVertical="true"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

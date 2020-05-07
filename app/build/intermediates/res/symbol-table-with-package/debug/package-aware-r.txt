@@ -2237,8 +2237,10 @@ drawable ic_arrow_back_black
 drawable ic_arrow_drop_down
 drawable ic_contact_us
 drawable ic_course
+drawable ic_download
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_lec
 drawable ic_location
 drawable ic_logout
 drawable ic_menu
@@ -2325,6 +2327,7 @@ id ForgotPassword_btn_sing_up
 id ForgotPassword_et_email
 id ForgotPassword_tv_forgot_password
 id ForgotPassword_tv_sub_title
+id LectureFragment_rv
 id META
 id ProfileFragment_btn_update
 id ProfileFragment_et_confirm_new_password
@@ -2595,6 +2598,10 @@ id rec_course_ly
 id rec_course_tv_course_name
 id rec_dialog_ly
 id rec_dialog_tv_title
+id rec_lecture_iv
+id rec_lecture_iv_download
+id rec_lecture_ly
+id rec_lecture_tv_lec_name
 id right
 id right_icon
 id right_side
@@ -2687,7 +2694,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tv_count
-id tv_frag
 id unchecked
 id uniform
 id unlabeled
@@ -2844,6 +2850,7 @@ layout notification_template_part_chronometer
 layout notification_template_part_time
 layout rec_course
 layout rec_dialog
+layout rec_lecture
 layout sdp_example
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
