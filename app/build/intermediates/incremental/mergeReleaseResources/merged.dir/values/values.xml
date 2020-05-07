@@ -245,10 +245,13 @@
     <color name="colorAccent">#FF9800</color>
     <color name="colorPrimary">#FF5722</color>
     <color name="colorPrimaryDark">#E64A19</color>
+    <color name="color_active">#28A745</color>
     <color name="color_bg_et">#F0F0F0</color>
     <color name="color_end_btn">#FE9154</color>
     <color name="color_end_toolbar">#EB7848</color>
     <color name="color_error">#f03434</color>
+    <color name="color_finished">#17A2B8</color>
+    <color name="color_pending">#FFC107</color>
     <color name="color_start_btn">#FD664D</color>
     <color name="color_start_toolbar">#F55C68</color>
     <color name="dark_gray">#393939</color>
@@ -1567,6 +1570,8 @@
     <item quantity="one"><ns1:g id="count">%d</ns1:g> new notification</item>
     <item quantity="other"><ns1:g id="count">%d</ns1:g> new notifications</item>
   </plurals>
+    <string name="Exams">Exams</string>
+    <string name="Lectures">Lectures</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_up_description">Navigate up</string>
     <string name="abc_action_menu_overflow_description">More options</string>
@@ -1598,6 +1603,7 @@
     <string name="academic_year">Academic Year</string>
     <string name="academic_year_required">academic year required</string>
     <string name="academy_year_chosen">academy year must be chosen first</string>
+    <string name="active">Active</string>
     <string name="adu_bug_desc">My bug or question is…\n\nHow often does it occurs in case of a bug?\n\nAre you using any custom / modified ROM, framework or kernel?</string>
     <string name="adu_bug_title">%1$s (v%2$s, %3$s, %4$s, %5$s)</string>
     <string name="adu_format_blank_space">%1$s %2$s</string>
@@ -1641,12 +1647,14 @@
     <string name="email">Email</string>
     <string name="email_not_valid">email not valid</string>
     <string name="email_required">email required</string>
+    <string name="end_date">End Date</string>
     <string name="error_icon_content_description">Error</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
     <string name="faiyum">Faiyum</string>
     <string name="female">Female</string>
+    <string name="finished">Finished</string>
     <string name="forget_password">Forgot your password?</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="forgot_password_sub_title">Please enter your email address. you will receive a code to create a new password via email.</string>
@@ -1657,6 +1665,7 @@
     <string name="gender_required">gender required</string>
     <string name="gharbia">Gharbia</string>
     <string name="giza">Giza</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="ismailia">Ismailia</string>
@@ -1728,6 +1737,7 @@
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
+    <string name="pending">Pending</string>
     <string name="phone">Phone Number</string>
     <string name="phone_11_number">phone number must be 11 number</string>
     <string name="phone_not_valid">phone number not valid</string>
@@ -1744,11 +1754,13 @@
     <string name="sing_up">Sing up</string>
     <string name="sohag">Sohag</string>
     <string name="south_sinai">South Sinai</string>
+    <string name="start_date">Start Date</string>
     <string name="state">State</string>
     <string name="state_required">state required</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="suez">Suez</string>
     <string name="table">Time Table </string>
+    <string name="title">Title</string>
     <string name="update">Update</string>
     <string name="welcome_back">Welcome Back</string>
     <string name="you_will_shortly_receive_an_email_with_a_code_to_setup_a_new_password">You will shortly receive an email with a code to setup a new password</string>

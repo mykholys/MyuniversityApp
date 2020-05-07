@@ -80,8 +80,8 @@ public class DetailsCourseActivity extends AppCompatActivity {
 
         DetailsCourseActivity_tab_layout.setupWithViewPager(main_pager);
         MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
-        adapter.addTab(new MyTab("Lectures",LectureFragment.newInstance(course)));
-        adapter.addTab(new MyTab("Exams",ExamFragment.newInstance(course)));
+        adapter.addTab(new MyTab(getString(R.string.Lectures),LectureFragment.newInstance(course)));
+        adapter.addTab(new MyTab(getString(R.string.Exams),ExamFragment.newInstance(course)));
         main_pager.setAdapter(adapter);
 
     }

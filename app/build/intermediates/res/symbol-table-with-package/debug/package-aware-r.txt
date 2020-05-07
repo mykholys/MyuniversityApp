@@ -833,10 +833,13 @@ color checkbox_themeable_attribute_color
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color color_active
 color color_bg_et
 color color_end_btn
 color color_end_toolbar
 color color_error
+color color_finished
+color color_pending
 color color_start_btn
 color color_start_toolbar
 color dark_gray
@@ -2206,6 +2209,9 @@ drawable adt_ic_warning
 drawable adt_toast_background
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_active
+drawable bg_finished
+drawable bg_pending
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2237,6 +2243,7 @@ drawable ic_arrow_back_black
 drawable ic_arrow_drop_down
 drawable ic_contact_us
 drawable ic_course
+drawable ic_date
 drawable ic_download
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -2252,6 +2259,7 @@ drawable ic_notification
 drawable ic_person
 drawable ic_settings
 drawable ic_table
+drawable ic_time
 drawable logo_iv
 drawable logo_name
 drawable material_ic_calendar_black_24dp
@@ -2297,6 +2305,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 font montserrat_light
 font montserrat_medium
+font montserrat_regular
 font open_sans_bold
 font open_sans_semibold
 font roboto
@@ -2318,6 +2327,7 @@ id DetailsCourseActivity_toolbar
 id DialogFragment_rv
 id DialogFragment_tv_sub_title
 id DialogFragment_tv_title
+id ExamFragment_rv
 id FUNCTION
 id ForgotPasswordDialogFragment_btn_done
 id ForgotPasswordDialogFragment_iv
@@ -2598,6 +2608,16 @@ id rec_course_ly
 id rec_course_tv_course_name
 id rec_dialog_ly
 id rec_dialog_tv_title
+id rec_exam_end_date
+id rec_exam_end_time
+id rec_exam_exam_name
+id rec_exam_ly
+id rec_exam_row1
+id rec_exam_row2
+id rec_exam_start_date
+id rec_exam_start_time
+id rec_exam_status
+id rec_exam_title
 id rec_lecture_iv
 id rec_lecture_iv_download
 id rec_lecture_ly
@@ -2850,6 +2870,7 @@ layout notification_template_part_chronometer
 layout notification_template_part_time
 layout rec_course
 layout rec_dialog
+layout rec_exam
 layout rec_lecture
 layout sdp_example
 layout select_dialog_item_material
@@ -2905,6 +2926,7 @@ string about_developers
 string academic_year
 string academic_year_required
 string academy_year_chosen
+string active
 string adu_bug_desc
 string adu_bug_title
 string adu_format_blank_space
@@ -2948,12 +2970,14 @@ string done
 string email
 string email_not_valid
 string email_required
+string end_date
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string faiyum
 string female
+string finished
 string forget_password
 string forgot_password
 string forgot_password_sub_title
@@ -3036,6 +3060,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string pending
 string phone
 string phone_11_number
 string phone_not_valid
@@ -3052,11 +3077,13 @@ string sing_in
 string sing_up
 string sohag
 string south_sinai
+string start_date
 string state
 string state_required
 string status_bar_notification_info_overflow
 string suez
 string table
+string title
 string update
 string welcome_back
 string you_will_shortly_receive_an_email_with_a_code_to_setup_a_new_password

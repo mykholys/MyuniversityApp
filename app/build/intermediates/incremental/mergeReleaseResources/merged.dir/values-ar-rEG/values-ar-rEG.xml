@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="Exams">الامتحانات</string>
+    <string name="Lectures">المحاضرات</string>
     <string name="about_developers">مطور التطبيق</string>
     <string name="academic_year">السنة الأكاديمية</string>
     <string name="academic_year_required">السنة الأكاديمية مطلوبه</string>
     <string name="academy_year_chosen">يجب اختيار السنة الدراسية أولاً</string>
+    <string name="active">نشط</string>
     <string name="alexandria">الإسكندرية</string>
     <string name="already_have_an_account">هل لديك حساب ؟</string>
     <string name="app_name">My University</string>
@@ -35,8 +38,10 @@
     <string name="email">البريد الإلكتروني</string>
     <string name="email_not_valid">البريد الإلكتروني غير صالح</string>
     <string name="email_required">البريد الإلكتروني مطلوب</string>
+    <string name="end_date">تاريخ نهايتة</string>
     <string name="faiyum">"الفيوم "</string>
     <string name="female">أنثى</string>
+    <string name="finished">تم الانتهاء</string>
     <string name="forget_password">هل نسيت كلمة السر؟</string>
     <string name="forgot_password">نسيت كلمة السر</string>
     <string name="forgot_password_sub_title">الرجاء إدخال عنوان البريد الإلكتروني الخاص بك. سوف تتلقى رمزًا لإنشاء كلمة سر جديدة عبر البريد الإلكتروني.</string>
@@ -76,6 +81,7 @@
     <string name="password_not_match">لا تتطابق كلمة السر الجديدة مع تأكيد كلمة السر</string>
     <string name="password_required">كلمة المرور مطلوبة</string>
     <string name="password_short">كلمة المرور قصيرة جدًا (الحد الأدنى هو 6 أحرف)</string>
+    <string name="pending">قيد الانتظار</string>
     <string name="phone">رقم المحمول</string>
     <string name="phone_11_number">يجب أن يكون رقم الهاتف 11 رقمًا</string>
     <string name="phone_not_valid">رقم الهاتف غير صالح</string>
@@ -91,10 +97,12 @@
     <string name="sing_up">تسجيل</string>
     <string name="sohag">سوهاج</string>
     <string name="south_sinai">جنوب سيناء</string>
+    <string name="start_date">تاريخ بدايتة</string>
     <string name="state">المحافظة</string>
     <string name="state_required">المحافظة مطلوبة</string>
     <string name="suez">السويس</string>
     <string name="table">الجدول</string>
+    <string name="title">اسم الامتحان</string>
     <string name="update">حفظ</string>
     <string name="welcome_back">مرحبا بعودتك</string>
     <string name="you_will_shortly_receive_an_email_with_a_code_to_setup_a_new_password">ستتلقى قريباً بريدًا إلكترونيًا يحتوي على رمز لإعداد كلمة سرجديدة</string>

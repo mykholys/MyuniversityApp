@@ -9,6 +9,7 @@
     <color name="black">#000000</color>
     <color name="gray">#9B9B9B</color>
     <color name="dark_gray">#393939</color>
+
     <color name="alpha_gray">#9B9B9B</color>
     <color name="color_bg_et">#F0F0F0</color>
 
@@ -21,6 +22,13 @@
 
 
     <color name="color_error">#f03434</color>
+
+
+    <color name="color_active">#28A745</color>
+    <color name="color_pending">#FFC107</color>
+    <color name="color_finished">#17A2B8</color>
+
+
 
 
 

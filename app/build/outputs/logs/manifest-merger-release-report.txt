@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-48:12
+ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-49:12
 MERGED from [com.infideap.drawerbehavior:drawer-behavior:1.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\d5a38f77e81303d6893010a39fd10e04\drawer-behavior-1.0.1\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.material:material:1.2.0-alpha06] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\c4f051de4d8c8a7d5b53f3e9ccfe2014\material-1.2.0-alpha06\AndroidManifest.xml:17:1-24:12
 MERGED from [com.etebarian:meow-bottom-navigation-java:1.2.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\a4a62fac84bbcd8e43beba6e993f9470\jetified-meow-bottom-navigation-java-1.2.0\AndroidManifest.xml:2:1-11:12
@@ -51,22 +51,22 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Admin\.gradle
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\733fc1d306cee2c05d3e1fb0b7527020\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\fdd65d8b6066fd289a68b42931dc03a2\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\c2e7196fa5a9fc8ea47e5226a4dff583\annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-49:12
 	package
 		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:4:5-39
 		INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml
 		INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-48:12
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-49:12
 		INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml
 	xmlns:dist
 		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:3:5-61
 	android:versionCode
 		INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-48:12
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:1-49:12
 		INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:2:11-69
@@ -87,7 +87,7 @@ ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.
 	android:name
 		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:10:22-65
 application
-ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:13:5-46:19
+ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:12:5-47:19
 MERGED from [com.infideap.drawerbehavior:drawer-behavior:1.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\d5a38f77e81303d6893010a39fd10e04\drawer-behavior-1.0.1\AndroidManifest.xml:11:5-53
 MERGED from [com.infideap.drawerbehavior:drawer-behavior:1.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\d5a38f77e81303d6893010a39fd10e04\drawer-behavior-1.0.1\AndroidManifest.xml:11:5-53
 MERGED from [com.google.android.material:material:1.2.0-alpha06] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\c4f051de4d8c8a7d5b53f3e9ccfe2014\material-1.2.0-alpha06\AndroidManifest.xml:22:5-20
@@ -105,49 +105,53 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Ad
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.3.0-alpha01] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\ffb66abad4c251fa91912bdcea2c857b\core-1.3.0-alpha01\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:17:9-35
 	android:label
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:16:9-41
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:15:9-41
 	android:roundIcon
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:17:9-44
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:16:9-44
 	android:icon
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:15:9-39
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:14:9-39
 	android:allowBackup
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:13:9-35
 	android:theme
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:19:9-40
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:18:9-40
+activity#com.mykholy.myuniversity.ui.DetailsCourseActivity
+ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:19:9-71
+	android:name
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:19:19-59
 activity#com.mykholy.myuniversity.ui.ForgotPasswordActivity
-ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:20:9-23:25
+ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:20:9-23:76
 	android:screenOrientation
 		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:22:13-49
 	android:windowSoftInputMode
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:21:13-73
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:23:13-73
 	android:name
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:20:19-60
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:21:13-54
 activity#com.mykholy.myuniversity.ui.RegisterActivity
-ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:24:9-28:51
+ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:24:9-28:76
 	android:screenOrientation
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:28:13-49
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:27:13-49
 	android:parentActivityName
 		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:26:13-59
 	android:windowSoftInputMode
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:27:13-73
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:28:13-73
 	android:name
 		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:25:13-48
 activity#com.mykholy.myuniversity.ui.LoginActivity
-ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:29:9-32:51
+ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:29:9-32:76
 	android:screenOrientation
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:32:13-49
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:31:13-49
 	android:windowSoftInputMode
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:31:13-73
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:32:13-73
 	android:name
 		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:30:13-45
 activity#com.mykholy.myuniversity.ui.SplashScreenActivity
 ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:33:9-42:20
 	android:screenOrientation
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:36:13-49
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:35:13-49
 	android:windowSoftInputMode
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:35:13-73
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:36:13-73
 	android:name
 		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:34:13-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
@@ -161,13 +165,13 @@ ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.
 	android:name
 		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:40:27-74
 activity#com.mykholy.myuniversity.ui.MainActivity
-ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:43:9-45:51
+ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:43:9-46:76
 	android:screenOrientation
 		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:45:13-49
 	android:windowSoftInputMode
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:44:13-73
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:46:13-73
 	android:name
-		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:43:19-50
+		ADDED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:44:13-44
 uses-sdk
 INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml

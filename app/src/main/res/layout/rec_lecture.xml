@@ -8,15 +8,16 @@
     app:cardCornerRadius="@dimen/_15sdp"
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true"
+    app:contentPadding="@dimen/_10sdp"
 
     >
 
     <RelativeLayout
         android:id="@+id/rec_lecture_ly"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_65sdp"
-        android:layout_gravity="center_vertical"
-        android:padding="@dimen/_10sdp"
+        android:layout_height="match_parent"
+
+
 
         >
 
