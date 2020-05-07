@@ -1,0 +1,125 @@
+<resources>
+    <string name="app_name" translatable="false">My University</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="login_to_your_account">Login to your account</string>
+    <string name="email">Email</string>
+    <string name="password">password</string>
+    <string name="login">Login</string>
+    <string name="forget_password">Forgot your password?</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sing_up">Sing up</string>
+    <string name="email_required">email required</string>
+    <string name="email_not_valid">email not valid</string>
+
+    <string name="password_required">password required</string>
+    <string name="password_current_required">current password required</string>
+    <string name="password_new_required">new password required</string>
+    <string name="password_confirmation_required">confirmation password required</string>
+    <string name="password_short">password is too short (minimum is 6 characters)</string>
+    <string name="password_new_short">new password is too short (minimum is 6 characters)</string>
+
+
+    <string name="create_an_account">Create an account</string>
+
+    <string name="full_name">Full Name</string>
+    <string name="fullname_short">Full name is too short (minimum is 6 characters)</string>
+    <string name="full_name_required">full name required</string>
+
+    <string name="national_id">National Id</string>
+    <string name="national_id_required">national id required</string>
+    <string name="national_id_14_number">national id must be 14 number</string>
+
+    <string name="phone">Phone Number</string>
+    <string name="phone_required">phone number required</string>
+    <string name="phone_11_number">phone number must be 11 number</string>
+    <string name="phone_not_valid">phone number not valid</string>
+
+
+    <string name="birthdate">Birthdate</string>
+    <string name="birthdate_required">birthdate required</string>
+    <string name="birthdate_not_valid">birthdate not valid</string>
+
+
+    <string name="state">State</string>
+    <string name="choose_state">Choose State…</string>
+    <string name="state_required">state required</string>
+
+    <string name="gender">Gender</string>
+    <string name="choose_gender">Choose Gender…</string>
+    <string name="gender_required">gender required</string>
+
+    <string name="academic_year">Academic Year</string>
+    <string name="choose_academic_year">Choose Academic Year…</string>
+    <string name="academic_year_required">academic year required</string>
+
+    <string name="department">Department</string>
+    <string name="choose_department">Choose Department</string>
+    <string name="department_required">department required</string>
+
+    <string name="register">Register</string>
+    <string name="already_have_an_account">Already have an account ?</string>
+    <string name="sing_in">Sing in</string>
+
+
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+
+    //state
+    <string name="alexandria">Alexandria</string>
+    <string name="aswan">Aswan</string>
+    <string name="asyut">Asyut</string>
+    <string name="beheira">Beheira</string>
+    <string name="beni_suef">Beni Suef</string>
+    <string name="cairo">Cairo</string>
+    <string name="dakahlia">Dakahlia</string>
+    <string name="damietta">Damietta</string>
+    <string name="faiyum">Faiyum</string>
+    <string name="gharbia">Gharbia</string>
+    <string name="giza">Giza</string>
+    <string name="ismailia">Ismailia</string>
+    <string name="kafr_el_sheikh">Kafr El Sheikh</string>
+    <string name="luxor">Luxor</string>
+    <string name="matruh">Matruh</string>
+    <string name="minya">Minya</string>
+    <string name="monufia">Monufia</string>
+    <string name="new_valley">New Valley</string>
+    <string name="north_sina">North Sinai</string>
+    <string name="port_said">Port Said</string>
+    <string name="qalyubia">Qalyubia</string>
+    <string name="qena">Qena</string>
+    <string name="red_sea">Red Sea</string>
+    <string name="sharqia">Sharqia</string>
+    <string name="sohag">Sohag</string>
+    <string name="south_sinai">South Sinai</string>
+    <string name="suez">Suez</string>
+    <string name="academy_year_chosen">academy year must be chosen first</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="reset_password">Reset password</string>
+    <string name="forgot_password_sub_title">Please enter your email address. you will receive a code to create a new password via email.</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+    <string name="code_has_been_sent_to_reset_a_new_password">Code has been sent to reset a new password</string>
+    <string name="you_will_shortly_receive_an_email_with_a_code_to_setup_a_new_password">You will shortly receive an email with a code to setup a new password</string>
+    <string name="done">Done</string>
+    <string name="update">Update</string>
+    <string name="current_password">Current Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="new_password">New Password</string>
+    <string name="table">Time Table </string>
+    <string name="location">Our Location</string>
+    <string name="contact_us">Contact us</string>
+    <string name="about_developers">About developers</string>
+    <string name="menu_settings">Settings</string>
+    <string name="change_language">Change language</string>
+    <string name="logout">Logout</string>
+    <string name="password_not_match">the new password and confirmation password do not match</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

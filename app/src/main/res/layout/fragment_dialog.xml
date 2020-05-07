@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/custom_bg_dialog"
+    android:padding="@dimen/_15sdp"
+    tools:context=".ui.dialog.DialogFragment">
+
+
+    <TextView
+        android:id="@+id/DialogFragment_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_16ssp" />
+
+    <TextView
+        android:id="@+id/DialogFragment_tv_sub_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/DialogFragment_tv_title"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+
+        android:fontFamily="@font/open_sans_semibold"
+        android:gravity="center_horizontal"
+        android:textColor="@color/alpha_gray"
+        android:textSize="@dimen/_12ssp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/DialogFragment_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/DialogFragment_tv_sub_title" />
+
+</RelativeLayout>

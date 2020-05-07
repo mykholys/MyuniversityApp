@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ui.CourseFragment">
+
+    <ImageView
+        android:id="@+id/CourseFragment_iv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_260sdp"
+        android:src="@drawable/custom_bg_toolbar_course_ltr"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/CourseFragment_iv_menu"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:src="@drawable/ic_menu"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/CourseFragment_iv_profile"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_70sdp"
+        android:src="@drawable/logo_iv"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/CourseFragment_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_70sdp"
+        android:layout_toEndOf="@+id/CourseFragment_iv_profile"
+        android:fontFamily="@font/open_sans_semibold"
+        android:text="Ahmed El-kholy"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18ssp" />
+
+    <TextView
+        android:id="@+id/CourseFragment_tv_academic_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CourseFragment_tv_name"
+        android:layout_alignStart="@+id/CourseFragment_tv_name"
+        android:fontFamily="@font/roboto"
+        android:text="@string/academic_year"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+
+        />
+
+    <TextView
+        android:id="@+id/CourseFragment_tv_department"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CourseFragment_tv_academic_year"
+        android:layout_alignStart="@+id/CourseFragment_tv_name"
+        android:fontFamily="@font/roboto"
+        android:text="@string/department"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/CourseFragment_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/CourseFragment_iv_bg"
+        android:layout_marginTop="@dimen/_minus35sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_60sdp"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay"/>
+
+</RelativeLayout>

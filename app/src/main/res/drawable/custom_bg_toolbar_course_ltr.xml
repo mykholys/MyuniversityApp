@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- Colored rectangle-->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="@color/color_start_toolbar"
+                android:endColor="@color/color_end_toolbar"
+                android:type="linear"
+                android:angle="0"
+
+                />
+        </shape>
+    </item>
+
+
+
+
+    <item
+
+        android:right="-1000dp"
+        android:left="-1000dp"
+        android:top="@dimen/_200sdp"
+        android:bottom="@dimen/_minus60sdp">
+        <rotate android:fromDegrees="170" >
+            <shape android:shape="rectangle">
+
+                <solid android:color="#ffffff" />
+            </shape>
+        </rotate>
+    </item>
+
+</layer-list>

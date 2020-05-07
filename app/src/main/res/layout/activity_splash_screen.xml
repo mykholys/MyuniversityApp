@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SplashScreenActivity">
+
+    <ImageView
+        android:id="@+id/students"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/students" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_below="@+id/students"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:src="@drawable/logo_iv" />
+
+    <ImageView
+        android:id="@+id/logo_name"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_name" />
+
+    <ImageView
+        android:id="@+id/study_iv"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="-5dp"
+        android:layout_marginBottom="-5dp"
+        android:src="@drawable/study"
+
+        />
+
+</RelativeLayout>

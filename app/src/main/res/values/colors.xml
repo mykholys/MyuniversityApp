@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF5722</color>
+    <color name="colorPrimaryDark">#E64A19</color>
+    <color name="colorAccent">#FF9800</color>
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#9B9B9B</color>
+    <color name="dark_gray">#393939</color>
+    <color name="alpha_gray">#9B9B9B</color>
+    <color name="color_bg_et">#F0F0F0</color>
+
+    <color name="color_start_btn">#FD664D</color>
+    <color name="color_end_btn">#FE9154</color>
+
+
+    <color name="color_start_toolbar">#F55C68</color>
+    <color name="color_end_toolbar">#EB7848</color>
+
+
+    <color name="color_error">#f03434</color>
+
+
+
+</resources>
