@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_120sdp"
+    android:layout_height="wrap_content"
     android:elevation="@dimen/_3sdp"
     app:cardCornerRadius="@dimen/_15sdp"
     app:cardElevation="3dp"
@@ -13,7 +13,7 @@
     >
 
     <RelativeLayout
-        android:id="@+id/rec_exam_ly"
+        android:id="@+id/rec_exam_solve_ly"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
@@ -21,7 +21,7 @@
         >
 
         <LinearLayout
-            android:id="@+id/rec_exam_title"
+            android:id="@+id/rec_exam_solve_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/montserrat_regular"
-                android:gravity="center"
+                android:gravity="start"
                 android:text="@string/title"
                 android:textColor="@color/alpha_gray"
                 android:textSize="@dimen/_12ssp" />
@@ -43,8 +43,9 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:fontFamily="@font/montserrat_regular"
-                android:gravity="center"
-                android:text="@string/start_date"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:gravity="start"
+                android:text="@string/time_taken"
                 android:textColor="@color/alpha_gray"
                 android:textSize="@dimen/_12ssp" />
 
@@ -53,113 +54,70 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/montserrat_regular"
-                android:gravity="center"
-                android:text="@string/end_date"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:gravity="start"
+                android:text="@string/result"
                 android:textColor="@color/alpha_gray"
                 android:textSize="@dimen/_12ssp" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/rec_exam_row1"
+            android:id="@+id/rec_exam_solve_row1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rec_exam_title"
+            android:layout_below="@+id/rec_exam_solve_title"
             android:layout_marginTop="@dimen/_10sdp"
             android:orientation="horizontal"
             android:weightSum="3">
 
             <TextView
-                android:id="@+id/rec_exam_exam_name"
+                android:id="@+id/rec_exam_solve_exam_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/montserrat_regular"
                 android:layout_gravity="center_vertical"
                 android:gravity="start"
-                android:text="Exam 1 "
+                android:textAlignment="viewStart"
+                android:text="exam_solve 1 "
                 android:maxLines="1"
                 android:lines="1"
                 android:textColor="@color/dark_gray"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_10ssp" />
 
             <TextView
-                android:id="@+id/rec_exam_start_date"
+                android:id="@+id/rec_exam_solve_time_taken"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/ic_date"
+                android:drawableStart="@drawable/ic_time"
                 android:drawablePadding="@dimen/_3sdp"
-
-                android:text="2020-04-10"
-                android:textColor="@color/dark_gray" />
+                android:text="00:10:20"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/_10ssp"/>
 
             <TextView
-                android:id="@+id/rec_exam_end_date"
+                android:id="@+id/rec_exam_solve_result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/ic_date"
-                android:drawablePadding="@dimen/_3sdp"
                 android:layout_gravity="center_vertical"
-                android:text="2020-04-10"
-                android:textColor="@color/dark_gray" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/rec_exam_row2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rec_exam_row1"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:orientation="horizontal"
-
-            android:weightSum="3">
-
-            <TextView
-                android:id="@+id/rec_exam_status"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:layout_gravity="center"
-
-                android:layout_weight="1"
-                android:background="@drawable/bg_active"
-                android:fontFamily="@font/montserrat_medium"
                 android:gravity="center"
-                android:text="@string/active"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/rec_exam_start_time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_weight="1"
-
-                android:drawableStart="@drawable/ic_time"
-                android:drawablePadding="@dimen/_3sdp"
-                android:text="05:50 PM"
-                android:textColor="@color/dark_gray" />
-
-            <TextView
-                android:id="@+id/rec_exam_end_time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_weight="1"
-                android:drawableStart="@drawable/ic_time"
-                android:layout_gravity="center_vertical"
-                android:drawablePadding="@dimen/_3sdp"
-                android:text="05:50 PM"
-                android:textColor="@color/dark_gray" />
+                android:text="15/20"
+                android:background="@drawable/custom_bg_btn"
+                android:padding="@dimen/_2sdp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"/>
 
         </LinearLayout>
+
+
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

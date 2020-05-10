@@ -1,37 +1,48 @@
 package com.mykholy.myuniversity.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-import android.app.Activity;
-import android.content.Context;
+
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.os.Build;
+
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
+import android.widget.EditText;
+import android.widget.ImageView;
+
+import com.github.loadingview.LoadingDialog;
+
+import com.github.loadingview.LoadingView;
+import com.mykholy.myuniversity.API.API_Interface;
+import com.mykholy.myuniversity.API.AppClient;
 import com.mykholy.myuniversity.R;
+import com.mykholy.myuniversity.model.Login;
+import com.mykholy.myuniversity.model.Student;
 import com.mykholy.myuniversity.utilities.Check;
 import com.mykholy.myuniversity.utilities.ConnectionUtils;
 import com.mykholy.myuniversity.utilities.Constants;
-import com.mykholy.myuniversity.utilities.LanguageHelper;
 import com.pranavpandey.android.dynamic.toasts.DynamicToast;
 
-import java.util.Locale;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText login_et_email, login_et_password;
+    LoadingView loadingView;
+
 
     String inputEmail;
     String inputPass;
+
+    private API_Interface api_interface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
         setUi();
+        setApi();
 
     }
 
@@ -54,8 +66,16 @@ public class LoginActivity extends AppCompatActivity {
         //EditText
         login_et_email = findViewById(R.id.login_et_email);
         login_et_password = findViewById(R.id.login_et_password);
+        loadingView = findViewById(R.id.loadingView);
+        loadingView.stop();
 
 
+    }
+
+
+    private void setApi() {
+
+        api_interface = AppClient.getClient().create(API_Interface.class);
     }
 
     public void login_btn_On_Click(View view) {
@@ -65,13 +85,83 @@ public class LoginActivity extends AppCompatActivity {
 
         } else {
             if (ConnectionUtils.isConnected(LoginActivity.this)) {
-                Constants.getSPreferences(this).setLogIn(true);
-                Intent MainIntent = new Intent(this, MainActivity.class);
-                startActivity(MainIntent);
-                finish();
-            }
+                loadingView.start();
+                loginApi();
+
+            } else
+                DynamicToast.makeWarning(this, getString(R.string.no_internet)).show();
 
         }
+
+    }
+
+    private void loginApi() {
+        Login login = new Login(inputEmail, inputPass, "password", 2, "J3kBZblIgnwviJpdN9NY9YMcXtc572xCwaCG3EXu", "student-api");
+        Call<Login> call = api_interface.Login(login);
+        call.enqueue(new Callback<Login>() {
+            @Override
+            public void onResponse(@NonNull Call<Login> call, @NonNull Response<Login> response) {
+                Log.i("login_loginApi", "onResponse:" + response);
+                Log.i("login_loginApi", "before if onResponseBody:" + response.body());
+                if (response.isSuccessful()) {
+                    assert response.body() != null;
+                    Constants.getSPreferences(LoginActivity.this).setType_Token(response.body().getTokenType());
+                    Constants.getSPreferences(LoginActivity.this).setToken(response.body().getAccessToken());
+                    Constants.getSPreferences(LoginActivity.this).setRefreshToken(response.body().getRefreshToken());
+                    Constants.getSPreferences(LoginActivity.this).setRefreshToken(response.body().getRefreshToken());
+                    Constants.getSPreferences(LoginActivity.this).setLogIn(true);
+                    Log.i("login_loginApi", "in if onResponseBody:" + response.body());
+                    getStudentInformation();
+
+
+                } else if (response.code() == 401)
+                    DynamicToast.makeWarning(LoginActivity.this, getString(R.string.email_pass_incorrect)).show();
+                loadingView.stop();
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Login> call, @NonNull Throwable t) {
+                loadingView.stop();
+                Log.i("onFailure:", t.getMessage());
+            }
+        });
+    }
+
+    private void getStudentInformation() {
+        String token = Constants.getSPreferences(LoginActivity.this).getType_Token() + " " + Constants.getSPreferences(LoginActivity.this).getToken();
+        Log.i("login_getStudent", "token:" + token);
+
+        Call<Student> call = api_interface.getInfoStudent(token, inputEmail);
+        call.enqueue(new Callback<Student>() {
+            @Override
+            public void onResponse(@NonNull Call<Student> call, @NonNull Response<Student> response) {
+                Log.i("login_getStudent", "before if onResponseBody:" + response.body());
+                Log.i("login_getStudent", "before if onResponse:" + response);
+                if (response.isSuccessful()) {
+                    assert response.body() != null;
+                    Log.i("login_getStudent", "in if onResponse:" + response);
+                    Log.i("login_getStudent", "in if onResponseBody:" + response.body());
+                    Constants.getSPreferences(LoginActivity.this).setSTUDENT_ID(response.body().getId());
+                    Constants.getSPreferences(LoginActivity.this).setSTUDENT_NAME(response.body().getSFullName());
+                    Constants.getSPreferences(LoginActivity.this).setUserName(response.body().getEmail());
+                    Constants.getSPreferences(LoginActivity.this).setSTUDENT_IMAGE(response.body().getImage());
+                    Constants.getSPreferences(LoginActivity.this).setSTUDENT_ACADEMIC_YEAR(response.body().getAcademicYear());
+                    Constants.getSPreferences(LoginActivity.this).setSTUDENT_DEPT_ID(response.body().getDeptID());
+                    Intent MainIntent = new Intent(LoginActivity.this, MainActivity.class);
+                    loadingView.stop();
+                    startActivity(MainIntent);
+                    finish();
+                }
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Student> call, @NonNull Throwable t) {
+                loadingView.stop();
+                Log.i("onFailure:", t.getMessage());
+            }
+        });
 
     }
 
@@ -117,17 +207,6 @@ public class LoginActivity extends AppCompatActivity {
     public void go_to_sing_up(View view) {
         Intent RegisterIntent = new Intent(this, RegisterActivity.class);
         startActivity(RegisterIntent);
-    }
-
-    private void setLocal(String lang, Activity activity) {
-
-        Resources res = getResources();
-        DisplayMetrics dm = res.getDisplayMetrics();
-        Configuration conf = res.getConfiguration();
-        conf.locale = new Locale(lang);
-        res.updateConfiguration(conf, dm);
-
-
     }
 
 

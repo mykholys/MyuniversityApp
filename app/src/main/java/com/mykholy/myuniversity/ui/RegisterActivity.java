@@ -1,6 +1,12 @@
 package com.mykholy.myuniversity.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -13,8 +19,13 @@ import android.view.WindowManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import com.github.loadingview.LoadingView;
+import com.mykholy.myuniversity.API.API_Interface;
+import com.mykholy.myuniversity.API.AppClient;
 import com.mykholy.myuniversity.R;
 import com.mykholy.myuniversity.model.Dialog;
+import com.mykholy.myuniversity.model.ErrorStudentRegister;
+import com.mykholy.myuniversity.model.Student;
 import com.mykholy.myuniversity.ui.dialog.DialogFragment;
 import com.mykholy.myuniversity.utilities.Check;
 import com.mykholy.myuniversity.utilities.ConnectionUtils;
@@ -28,6 +39,7 @@ import java.util.Date;
 
 public class RegisterActivity extends AppCompatActivity implements DialogFragment.OnFragmentInteractionListener, View.OnClickListener, TextWatcher {
 
+    private final int TAG_ID=1;
     private EditText Register_et_full_name, Register_et_email, Register_et_password, Register_et_national_id,
             Register_et_phone, Register_et_birthdate, Register_et_state, Register_et_gender,
             Register_et_academic_year, Register_et_department;
@@ -35,6 +47,10 @@ public class RegisterActivity extends AppCompatActivity implements DialogFragmen
 
     private String input_full_name, input_email, input_password, input_national_id, input_phone,
             input_bdate, input_state, input_gender, input_academic_year, input_department;
+
+    private LoadingView loadingView;
+
+    private API_Interface api_interface;
 
 
     @Override
@@ -44,6 +60,7 @@ public class RegisterActivity extends AppCompatActivity implements DialogFragmen
         setContentView(R.layout.activity_register);
 
         setUi();
+        setApi();
         setListener();
 
 
@@ -58,10 +75,40 @@ public class RegisterActivity extends AppCompatActivity implements DialogFragmen
             return;
 
         } else {
-            if (ConnectionUtils.isConnected(RegisterActivity.this))
-                DynamicToast.makeSuccess(this, "RegisterActivity :)").show();
+            if (ConnectionUtils.isConnected(RegisterActivity.this)) {
+                loadingView.start();
+                RegisterApi();
+
+            } else
+                DynamicToast.makeWarning(this, getString(R.string.no_internet)).show();
 
         }
+    }
+
+    private void RegisterApi() {
+        Log.i("tag_id", (String) Register_et_department.getTag(TAG_ID));
+        Call<Student> call = api_interface.Register(new Student(input_full_name, input_email, input_password, input_national_id, input_phone, input_bdate, input_gender, input_state, Integer.parseInt(input_academic_year), (Integer) Register_et_department.getTag(TAG_ID)));
+        call.enqueue(new Callback<Student>() {
+            @Override
+            public void onResponse(@NonNull Call<Student> call, @NonNull Response<Student> response) {
+                loadingView.stop();
+                if (response.isSuccessful()) {
+                    assert response.body() != null;
+                    DynamicToast.makeSuccess(RegisterActivity.this, getString(R.string.account_registerd)).show();
+                } else if (response.code() == 400) {
+                    assert response.body() != null;
+                    Log.i("errorBody:", String.valueOf(response.errorBody()));
+
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Student> call, @NonNull Throwable t) {
+                loadingView.stop();
+                Log.i("onFailure:", t.getMessage());
+
+            }
+        });
     }
 
 
@@ -84,6 +131,7 @@ public class RegisterActivity extends AppCompatActivity implements DialogFragmen
             Register_et_department.setError(null);
             Register_et_department.setBackgroundResource(R.drawable.custom_bg_et);
             Register_et_department.setText(dialog.getName());
+            Register_et_department.setTag(TAG_ID,dialog.getId());
         }
     }
 
@@ -158,6 +206,13 @@ public class RegisterActivity extends AppCompatActivity implements DialogFragmen
         Register_et_gender = findViewById(R.id.Register_et_gender);
         Register_et_academic_year = findViewById(R.id.Register_et_academic_year);
         Register_et_department = findViewById(R.id.Register_et_department);
+        loadingView = findViewById(R.id.loadingView);
+        loadingView.stop();
+    }
+
+    private void setApi() {
+
+        api_interface = AppClient.getClient().create(API_Interface.class);
     }
 
 

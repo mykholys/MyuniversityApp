@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SolveExamActivity">
+
+    <ImageView
+        android:id="@+id/SolveExamActivity_bg_iv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:background="@drawable/custom_bg_toolbar"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/SolveExamActivity_tv_total_take_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_margin="@dimen/_15sdp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:text="@string/total_take_time"
+        android:textColor="@color/white"
+
+        android:textSize="@dimen/_14ssp" />
+
+    <TextView
+        android:id="@+id/SolveExamActivity_txt_total_take_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/custom_bg_et"
+        android:fontFamily="@font/open_sans_semibold"
+        android:paddingStart="@dimen/_20sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_20sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text="15:00"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/SolveExamActivity_tv_exam_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SolveExamActivity_tv_total_take_time"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Exam 1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20ssp" />
+
+    <TextView
+        android:id="@+id/SolveExamActivity_tv_exam_num_questions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SolveExamActivity_tv_exam_title"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="Question 1/20"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/SolveExamActivity_tv_time_per_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SolveExamActivity_bg_iv"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:text="@string/time_per_question"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_14ssp" />
+
+    <TextView
+        android:id="@+id/SolveExamActivity_txt_time_per_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SolveExamActivity_bg_iv"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/custom_bg_et"
+        android:fontFamily="@font/open_sans_semibold"
+        android:paddingStart="@dimen/_20sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_20sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text="15:00"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:id="@+id/SolveExamActivity_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/SolveExamActivity_btn_Next"
+        android:layout_below="@+id/SolveExamActivity_txt_time_per_question"
+        android:padding="@dimen/_10sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/SolveExamActivity_tv_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/open_sans_semibold"
+                android:textColor="@color/black"
+                android:text="What is 5 +2?"
+                android:textSize="@dimen/_14ssp" />
+            <RelativeLayout
+                android:id="@+id/SolveExamActivity_card_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SolveExamActivity_tv_question"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:background="@drawable/bg_radio_btn"
+                >
+                <RadioButton
+                    android:id="@+id/SolveExamActivity_rb_a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textAlignment="viewStart"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="Asdsdsdsdsdsdsd"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/SolveExamActivity_card_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SolveExamActivity_card_a"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/bg_radio_btn"
+                >
+                <RadioButton
+                    android:id="@+id/SolveExamActivity_rb_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textAlignment="viewStart"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="Asdsdsdsdsdsdsd"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/SolveExamActivity_card_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SolveExamActivity_card_b"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/bg_radio_btn"
+                >
+                <RadioButton
+                    android:id="@+id/SolveExamActivity_rb_c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textAlignment="viewStart"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="Asdsdsdsdsdsdsd"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/SolveExamActivity_card_d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SolveExamActivity_card_c"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/bg_radio_btn"
+                >
+                <RadioButton
+                    android:id="@+id/SolveExamActivity_rb_d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textAlignment="viewStart"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="Asdsdsdsdsdsdsd"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/SolveExamActivity_btn_Next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/custom_bg_btn"
+        android:fontFamily="@font/open_sans_semibold"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp" />
+</RelativeLayout>

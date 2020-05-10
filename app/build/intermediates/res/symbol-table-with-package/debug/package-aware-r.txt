@@ -33,6 +33,8 @@ anim from_top
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim slide_in_bottom
+anim slide_out_top
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -505,6 +507,11 @@ attr listPreferredItemPaddingRight
 attr listPreferredItemPaddingStart
 attr logo
 attr logoDescription
+attr lv_duration
+attr lv_end_color
+attr lv_external_radius
+attr lv_internal_radius
+attr lv_start_color
 attr materialAlertDialogBodyTextStyle
 attr materialAlertDialogTheme
 attr materialAlertDialogTitleIconStyle
@@ -835,13 +842,16 @@ color colorPrimary
 color colorPrimaryDark
 color color_active
 color color_bg_et
+color color_end
 color color_end_btn
 color color_end_toolbar
 color color_error
 color color_finished
 color color_pending
+color color_start
 color color_start_btn
 color color_start_toolbar
+color dark_alpha_50
 color dark_gray
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
@@ -2212,6 +2222,7 @@ drawable avd_show_password
 drawable bg_active
 drawable bg_finished
 drawable bg_pending
+drawable bg_radio_btn
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2241,6 +2252,8 @@ drawable forgot_dialog_iv
 drawable ic_about_us
 drawable ic_arrow_back_black
 drawable ic_arrow_drop_down
+drawable ic_circle
+drawable ic_circle_sort
 drawable ic_contact_us
 drawable ic_course
 drawable ic_date
@@ -2258,6 +2271,8 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_notification
 drawable ic_person
 drawable ic_settings
+drawable ic_sort
+drawable ic_spin
 drawable ic_table
 drawable ic_time
 drawable logo_iv
@@ -2298,6 +2313,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable online_course
+drawable radio_button_inset
 drawable students
 drawable study
 drawable test_custom_background
@@ -2327,8 +2343,12 @@ id DetailsCourseActivity_toolbar
 id DialogFragment_rv
 id DialogFragment_tv_sub_title
 id DialogFragment_tv_title
+id ExamFragment_fab
 id ExamFragment_rv
 id FUNCTION
+id FinishExamDialogFragment_btn_done
+id FinishExamDialogFragment_tv_result
+id FinishExamDialogFragment_tv_title
 id ForgotPasswordDialogFragment_btn_done
 id ForgotPasswordDialogFragment_iv
 id ForgotPasswordDialogFragment_tv_sub_title
@@ -2363,6 +2383,30 @@ id Register_scroll
 id Register_tv_create_account
 id SHIFT
 id SYM
+id SolveExamActivity_bg_iv
+id SolveExamActivity_btn_Next
+id SolveExamActivity_card_a
+id SolveExamActivity_card_b
+id SolveExamActivity_card_c
+id SolveExamActivity_card_d
+id SolveExamActivity_rb_a
+id SolveExamActivity_rb_b
+id SolveExamActivity_rb_c
+id SolveExamActivity_rb_d
+id SolveExamActivity_scroll
+id SolveExamActivity_tv_exam_num_questions
+id SolveExamActivity_tv_exam_title
+id SolveExamActivity_tv_question
+id SolveExamActivity_tv_time_per_question
+id SolveExamActivity_tv_total_take_time
+id SolveExamActivity_txt_time_per_question
+id SolveExamActivity_txt_total_take_time
+id SortDialogFragment_btn_done
+id SortDialogFragment_card_solved
+id SortDialogFragment_card_unsolved
+id SortDialogFragment_iv
+id SortDialogFragment_rb_solved
+id SortDialogFragment_rb_unsolved
 id TOP_END
 id TOP_START
 id accessibility_action_clickable_span
@@ -2524,6 +2568,8 @@ id line1
 id line3
 id listMode
 id list_item
+id loadingView
+id loading_view
 id location
 id login_btn_login
 id login_et_email
@@ -2608,16 +2654,22 @@ id rec_course_ly
 id rec_course_tv_course_name
 id rec_dialog_ly
 id rec_dialog_tv_title
-id rec_exam_end_date
-id rec_exam_end_time
-id rec_exam_exam_name
-id rec_exam_ly
-id rec_exam_row1
-id rec_exam_row2
-id rec_exam_start_date
-id rec_exam_start_time
-id rec_exam_status
-id rec_exam_title
+id rec_exam_solve_exam_name
+id rec_exam_solve_ly
+id rec_exam_solve_result
+id rec_exam_solve_row1
+id rec_exam_solve_time_taken
+id rec_exam_solve_title
+id rec_exam_un_solve_end_date
+id rec_exam_un_solve_end_time
+id rec_exam_un_solve_exam_name
+id rec_exam_un_solve_ly
+id rec_exam_un_solve_row1
+id rec_exam_un_solve_row2
+id rec_exam_un_solve_start_date
+id rec_exam_un_solve_start_time
+id rec_exam_un_solve_status
+id rec_exam_un_solve_title
 id rec_lecture_iv
 id rec_lecture_iv_download
 id rec_lecture_ly
@@ -2792,6 +2844,7 @@ layout activity_forgot_password
 layout activity_login
 layout activity_main
 layout activity_register
+layout activity_solve_exam
 layout activity_splash_screen
 layout adt_layout_hint
 layout adt_layout_toast
@@ -2818,10 +2871,13 @@ layout dp_example
 layout fragment_course
 layout fragment_dialog
 layout fragment_exam
+layout fragment_finish_exam_dialog
 layout fragment_forgot_password_dialog
 layout fragment_lecture
 layout fragment_notification
 layout fragment_profile
+layout fragment_sort_dialog
+layout loading_view
 layout meow_navigation_cell
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
@@ -2870,7 +2926,8 @@ layout notification_template_part_chronometer
 layout notification_template_part_time
 layout rec_course
 layout rec_dialog
-layout rec_exam
+layout rec_exam_solve
+layout rec_exam_unsolve
 layout rec_lecture
 layout sdp_example
 layout select_dialog_item_material
@@ -2895,6 +2952,8 @@ layout text_view_without_line_height
 menu nav_menu
 mipmap ic_logo
 plurals mtrl_badge_content_description
+string Exams
+string Lectures
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -2926,6 +2985,7 @@ string about_developers
 string academic_year
 string academic_year_required
 string academy_year_chosen
+string account_registerd
 string active
 string adu_bug_desc
 string adu_bug_title
@@ -2958,6 +3018,7 @@ string clear_text_end_icon_content_description
 string closeDrawer
 string code_has_been_sent_to_reset_a_new_password
 string confirm_new_password
+string congrats
 string contact_us
 string create_an_account
 string current_password
@@ -2969,6 +3030,7 @@ string don_t_have_an_account
 string done
 string email
 string email_not_valid
+string email_pass_incorrect
 string email_required
 string end_date
 string error_icon_content_description
@@ -3045,6 +3107,8 @@ string navigation_drawer_close
 string navigation_drawer_open
 string new_password
 string new_valley
+string next
+string no_internet
 string north_sina
 string openDrawer
 string password
@@ -3065,28 +3129,40 @@ string phone
 string phone_11_number
 string phone_not_valid
 string phone_required
+string please_complete_exam
 string port_said
 string qalyubia
 string qena
+string question
 string red_sea
 string register
 string reset_password
+string result
 string search_menu_title
 string sharqia
 string sing_in
 string sing_up
 string sohag
+string solved_exams
 string south_sinai
 string start_date
 string state
 string state_required
 string status_bar_notification_info_overflow
+string submit
 string suez
 string table
+string time_per_question
+string time_taken
 string title
+string total_take_time
+string unsolved_exams
 string update
 string welcome_back
+string you_failed
+string you_passed
 string you_will_shortly_receive_an_email_with_a_code_to_setup_a_new_password
+string your_result
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
@@ -3315,6 +3391,7 @@ style Base_Widget_MaterialComponents_TextView
 style CardView
 style CardView_Dark
 style CardView_Light
+style DialogAnimations
 style EmptyTheme
 style MaterialAlertDialog_MaterialComponents
 style MaterialAlertDialog_MaterialComponents_Body_Text
@@ -3836,6 +3913,7 @@ styleable LinearConstraintLayout android_orientation
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
+styleable LoadingView lv_duration lv_end_color lv_external_radius lv_internal_radius lv_start_color
 styleable MaterialAlertDialog backgroundInsetBottom backgroundInsetEnd backgroundInsetStart backgroundInsetTop
 styleable MaterialAlertDialogTheme materialAlertDialogBodyTextStyle materialAlertDialogTheme materialAlertDialogTitleIconStyle materialAlertDialogTitlePanelStyle materialAlertDialogTitleTextStyle
 styleable MaterialAutoCompleteTextView android_inputType

@@ -128,6 +128,23 @@
     <string name="finished">Finished</string>
     <string name="Lectures">Lectures</string>
     <string name="Exams">Exams</string>
+    <string name="unsolved_exams">Unsolved Exams</string>
+    <string name="solved_exams">Solved Exams</string>
+    <string name="result">Result</string>
+    <string name="time_taken">Time taken</string>
+    <string name="total_take_time">Total take time</string>
+    <string name="time_per_question">Time per question</string>
+    <string name="next">Next</string>
+    <string name="question">"Question  "</string>
+    <string name="please_complete_exam">Please complete exam</string>
+    <string name="submit">submit</string>
+    <string name="congrats" translatable="false">Congrats</string>
+    <string name="you_failed">Unfortunately you failed</string>
+    <string name="your_result">"Your result is  "</string>
+    <string name="you_passed">Congratulations, you succeeded</string>
+    <string name="email_pass_incorrect">Your email or password incorrect</string>
+    <string name="no_internet">No internet, check the internet and try again</string>
+    <string name="account_registerd">Your account has been successfully registered</string>
 
 
 </resources>

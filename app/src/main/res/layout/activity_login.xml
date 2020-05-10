@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     tools:context=".ui.LoginActivity">
+
 
     <ScrollView
         android:id="@+id/login_scroll"
@@ -11,13 +14,19 @@
         android:layout_height="match_parent"
         tools:ignore="UselessParent">
 
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/_20sdp"
-            tools:ignore="UselessParent">
+            tools:ignore="UselessParent"
+
+            >
+
+
 
             <ImageView
+
                 android:id="@+id/e_learning_iv"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_230sdp"
@@ -146,4 +155,17 @@
         </RelativeLayout>
 
     </ScrollView>
+    <com.github.loadingview.LoadingView
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        app:lv_duration="15"
+        app:lv_end_color="@color/color_end_btn"
+        app:lv_external_radius="28dp"
+        app:lv_internal_radius="6dp"
+        android:background="@color/dark_alpha_50"
+        app:lv_start_color="@color/color_start_btn"
+        />
 </RelativeLayout>

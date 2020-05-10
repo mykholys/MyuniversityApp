@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/custom_bg_dialog"
+    android:paddingStart="@dimen/_20sdp"
+    android:paddingTop="@dimen/_30sdp"
+    android:paddingEnd="@dimen/_20sdp"
+    android:paddingBottom="@dimen/_30sdp"
+    tools:context=".ui.dialog.FinishExamDialogFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+
+        <TextView
+            android:id="@+id/FinishExamDialogFragment_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="@string/you_failed"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/_16sdp"
+            android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/FinishExamDialogFragment_tv_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_semibold"
+            android:layout_below="@+id/FinishExamDialogFragment_tv_title"
+            android:text="Your Result is 15/20"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/_14sdp"
+
+            android:textColor="@color/black"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/FinishExamDialogFragment_btn_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/FinishExamDialogFragment_tv_result"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/custom_bg_btn"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="@string/done"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp" />
+
+    </RelativeLayout>
+
+</FrameLayout>

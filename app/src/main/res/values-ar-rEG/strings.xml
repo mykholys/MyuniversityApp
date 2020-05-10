@@ -108,4 +108,20 @@
     <string name="finished">تم الانتهاء</string>
     <string name="Exams">الامتحانات</string>
     <string name="Lectures">المحاضرات</string>
+    <string name="time_taken">الوقت المستغرق</string>
+    <string name="result">النتيجة</string>
+    <string name="solved_exams">"الامتحانات التي تم حلها "</string>
+    <string name="unsolved_exams">"الامتحانات التي لم يتم حلها "</string>
+    <string name="next">التالي</string>
+    <string name="question">"السؤال  "</string>
+    <string name="time_per_question">"الوقت لكل سؤال "</string>
+    <string name="total_take_time">"إجمالي الوقت المستغرق "</string>
+    <string name="please_complete_exam">"يرجى إكمال الاختبار "</string>
+    <string name="submit">ارسال</string>
+    <string name="you_passed">"مبروك ، لقد نجحت "</string>
+    <string name="your_result">"نتيجتك هي "</string>
+    <string name="you_failed">"للأسف فشلت "</string>
+    <string name="no_internet">"لا يوجد إنترنت ، تحقق من الإنترنت وحاول مرة أخرى "</string>
+    <string name="email_pass_incorrect">"بريدك الإلكتروني أو كلمة المرور غير صحيحة "</string>
+    <string name="account_registerd">تم تسجيل حسابك بنجاح</string>
 </resources>

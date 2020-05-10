@@ -1,8 +1,16 @@
 package com.mykholy.myuniversity.model;
 
-public class Exam {
+import java.io.Serializable;
+
+public class Exam  implements Serializable {
 
     private Integer eId;
+
+    private Integer sId;
+
+    private Integer result;
+
+    private String timeSpend;
 
     private String title;
 
@@ -19,8 +27,9 @@ public class Exam {
     private String createdAt;
 
     private String status;
+    private Integer num_questions;
 
-    public Exam(Integer eId, String title, String startDate, String endDate, Integer timer, Integer dId, Integer cId, String createdAt, String status) {
+    public Exam(Integer eId, String title, String startDate, String endDate, Integer timer, Integer dId, Integer cId, String createdAt, String status,Integer num_questions) {
         this.eId = eId;
         this.title = title;
         this.startDate = startDate;
@@ -30,14 +39,56 @@ public class Exam {
         this.cId = cId;
         this.createdAt = createdAt;
         this.status = status;
+        this.num_questions=num_questions;
+
     }
 
-    public Integer getEId() {
+    public Exam(Integer eId, Integer sId, Integer result, String timeSpend, String title, String startDate, String endDate, Integer timer, Integer dId, Integer cId, String createdAt, String status,Integer num_questions) {
+        this.eId = eId;
+        this.sId = sId;
+        this.result = result;
+        this.timeSpend = timeSpend;
+        this.title = title;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.timer = timer;
+        this.dId = dId;
+        this.cId = cId;
+        this.createdAt = createdAt;
+        this.status = status;
+       this.num_questions=num_questions;
+    }
+
+    public Integer geteId() {
         return eId;
     }
 
-    public void setEId(Integer eId) {
+    public void seteId(Integer eId) {
         this.eId = eId;
+    }
+
+    public Integer getsId() {
+        return sId;
+    }
+
+    public void setsId(Integer sId) {
+        this.sId = sId;
+    }
+
+    public Integer getResult() {
+        return result;
+    }
+
+    public void setResult(Integer result) {
+        this.result = result;
+    }
+
+    public String getTimeSpend() {
+        return timeSpend;
+    }
+
+    public void setTimeSpend(String timeSpend) {
+        this.timeSpend = timeSpend;
     }
 
     public String getTitle() {
@@ -72,19 +123,19 @@ public class Exam {
         this.timer = timer;
     }
 
-    public Integer getDId() {
+    public Integer getdId() {
         return dId;
     }
 
-    public void setDId(Integer dId) {
+    public void setdId(Integer dId) {
         this.dId = dId;
     }
 
-    public Integer getCId() {
+    public Integer getcId() {
         return cId;
     }
 
-    public void setCId(Integer cId) {
+    public void setcId(Integer cId) {
         this.cId = cId;
     }
 
@@ -102,5 +153,13 @@ public class Exam {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Integer getNum_questions() {
+        return num_questions;
+    }
+
+    public void setNum_questions(Integer num_questions) {
+        this.num_questions = num_questions;
     }
 }

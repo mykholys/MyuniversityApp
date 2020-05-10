@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_65sdp"
+    android:layout_height="wrap_content"
     android:elevation="@dimen/_3sdp"
     app:cardCornerRadius="@dimen/_15sdp"
     app:cardElevation="3dp"
@@ -23,8 +23,8 @@
 
         <ImageView
             android:id="@+id/rec_lecture_iv"
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_50sdp"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_lec"
             tools:ignore="ContentDescription" />
@@ -34,13 +34,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:textAlignment="viewStart"
             android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:layout_toEndOf="@+id/rec_lecture_iv"
             android:fontFamily="@font/montserrat_medium"
+            android:layout_toStartOf="@+id/rec_lecture_iv_download"
             android:lines="1"
             android:maxLines="1"
             android:textColor="@color/black"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_12ssp"
              />
 
         <ImageView

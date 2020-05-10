@@ -44,6 +44,13 @@ dependencies {
     //for 3d  drawerbehavior menu
     implementation 'com.infideap.drawerbehavior:drawer-behavior:1.0.1'
 
+//for retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+
+    //for loading
+    implementation 'com.samigehi:loadingview:1.1'
+
 
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'

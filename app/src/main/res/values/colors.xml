@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#FF5722</color>
     <color name="colorPrimaryDark">#E64A19</color>
-    <color name="colorAccent">#FF9800</color>
+    <color name="colorAccent">#E64A19</color>
 
 
     <color name="white">#FFFFFF</color>
@@ -10,7 +10,9 @@
     <color name="gray">#9B9B9B</color>
     <color name="dark_gray">#393939</color>
 
+
     <color name="alpha_gray">#9B9B9B</color>
+    <color name="dark_alpha_50">#80000000</color>
     <color name="color_bg_et">#F0F0F0</color>
 
     <color name="color_start_btn">#FD664D</color>

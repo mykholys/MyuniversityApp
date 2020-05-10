@@ -205,15 +205,15 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
             mdialogs.add(new Dialog("4"));
         } else if (title.equals(getString(R.string.department))) {
             if (academic_year == 1 | academic_year == 2) {
-                mdialogs.add(new Dialog("GN"));
-                mdialogs.add(new Dialog("SW"));
-                mdialogs.add(new Dialog("BIO"));
+                mdialogs.add(new Dialog(1,"GN"));
+                mdialogs.add(new Dialog(2,"SW"));
+                mdialogs.add(new Dialog(3,"BIO"));
             } else if (academic_year == 3 | academic_year == 4) {
-                mdialogs.add(new Dialog("CS"));
-                mdialogs.add(new Dialog("IT"));
-                mdialogs.add(new Dialog("IS"));
-                mdialogs.add(new Dialog("SW"));
-                mdialogs.add(new Dialog("BIO"));
+                mdialogs.add(new Dialog(4,"CS"));
+                mdialogs.add(new Dialog(5,"IT"));
+                mdialogs.add(new Dialog(6,"IS"));
+                mdialogs.add(new Dialog(7,"SW"));
+                mdialogs.add(new Dialog(8,"BIO"));
             }
         }
         else if(title.equals(getString(R.string.menu_settings))){

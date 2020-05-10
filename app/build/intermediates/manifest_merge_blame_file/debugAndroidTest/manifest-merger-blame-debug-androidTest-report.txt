@@ -3,35 +3,35 @@
 3    package="com.mykholy.myuniversity.test" >
 4
 5    <uses-sdk
-5-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3698943249288891721.xml:5:5-74
+5-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4372475867065480048.xml:5:5-74
 6        android:minSdkVersion="19"
-6-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3698943249288891721.xml:5:15-41
+6-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4372475867065480048.xml:5:15-41
 7        android:targetSdkVersion="28" />
-7-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3698943249288891721.xml:5:42-71
+7-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4372475867065480048.xml:5:42-71
 8
 9    <instrumentation
-9-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3698943249288891721.xml:11:5-15:74
+9-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4372475867065480048.xml:11:5-15:74
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3698943249288891721.xml:11:22-76
+10-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4372475867065480048.xml:11:22-76
 11        android:functionalTest="false"
-11-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3698943249288891721.xml:14:22-52
+11-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4372475867065480048.xml:14:22-52
 12        android:handleProfiling="false"
-12-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3698943249288891721.xml:13:22-53
+12-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4372475867065480048.xml:13:22-53
 13        android:label="Tests for com.mykholy.myuniversity"
-13-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3698943249288891721.xml:15:22-72
+13-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4372475867065480048.xml:15:22-72
 14        android:targetPackage="com.mykholy.myuniversity" />
-14-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3698943249288891721.xml:12:22-70
+14-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4372475867065480048.xml:12:22-70
 15
 16    <uses-permission android:name="android.permission.REORDER_TASKS" />
 16-->[androidx.test:core:1.2.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\b84e39374531a9cc1088cbb1e2cc9cc2\core-1.2.0\AndroidManifest.xml:24:5-72
 16-->[androidx.test:core:1.2.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\b84e39374531a9cc1088cbb1e2cc9cc2\core-1.2.0\AndroidManifest.xml:24:22-69
 17
 18    <application android:debuggable="true" >
-18-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3698943249288891721.xml:7:5-9:19
-18-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3698943249288891721.xml:7:18-43
+18-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4372475867065480048.xml:7:5-9:19
+18-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4372475867065480048.xml:7:18-43
 19        <uses-library android:name="android.test.runner" />
-19-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3698943249288891721.xml:8:9-60
-19-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3698943249288891721.xml:8:23-57
+19-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4372475867065480048.xml:8:9-60
+19-->H:\Android_Studio\Projects\MyUniversity\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4372475867065480048.xml:8:23-57
 20
 21        <activity
 21-->[androidx.test:core:1.2.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\b84e39374531a9cc1088cbb1e2cc9cc2\core-1.2.0\AndroidManifest.xml:27:9-33:20

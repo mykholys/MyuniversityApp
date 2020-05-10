@@ -26,7 +26,7 @@
 16-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:10:22-65
 17
 18    <application
-18-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:12:5-47:19
+18-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:12:5-48:19
 19        android:allowBackup="true"
 19-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:13:9-35
 20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -41,62 +41,65 @@
 24-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:17:9-35
 25        android:theme="@style/AppTheme" >
 25-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:18:9-40
-26        <activity android:name="com.mykholy.myuniversity.ui.DetailsCourseActivity" />
-26-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:19:9-71
-26-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:19:19-59
-27        <activity
-27-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:20:9-23:76
-28            android:name="com.mykholy.myuniversity.ui.ForgotPasswordActivity"
-28-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:21:13-54
-29            android:screenOrientation="portrait"
-29-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:22:13-49
-30            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-30-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:23:13-73
-31        <activity
-31-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:24:9-28:76
-32            android:name="com.mykholy.myuniversity.ui.RegisterActivity"
-32-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:25:13-48
-33            android:parentActivityName="com.mykholy.myuniversity.ui.LoginActivity"
-33-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:26:13-59
-34            android:screenOrientation="portrait"
-34-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:27:13-49
-35            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-35-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:28:13-73
-36        <activity
-36-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:29:9-32:76
-37            android:name="com.mykholy.myuniversity.ui.LoginActivity"
-37-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:30:13-45
-38            android:screenOrientation="portrait"
-38-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:31:13-49
-39            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-39-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:32:13-73
-40        <activity
-40-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:33:9-42:20
-41            android:name="com.mykholy.myuniversity.ui.SplashScreenActivity"
-41-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:34:13-52
-42            android:screenOrientation="portrait"
-42-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:35:13-49
-43            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
-43-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:36:13-73
-44            <intent-filter>
-44-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:37:13-41:29
-45                <action android:name="android.intent.action.MAIN" />
-45-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:38:17-69
-45-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:38:25-66
-46
-47                <category android:name="android.intent.category.LAUNCHER" />
-47-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:40:17-77
-47-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:40:27-74
-48            </intent-filter>
-49        </activity>
-50        <activity
-50-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:43:9-46:76
-51            android:name="com.mykholy.myuniversity.ui.MainActivity"
-51-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:44:13-44
-52            android:screenOrientation="portrait"
-52-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:45:13-49
-53            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-53-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:46:13-73
-54    </application>
-55
-56</manifest>
+26        <activity android:name="com.mykholy.myuniversity.ui.SolveExamActivity" />
+26-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:19:9-67
+26-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:19:19-55
+27        <activity android:name="com.mykholy.myuniversity.ui.DetailsCourseActivity" />
+27-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:20:9-62
+27-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:20:19-59
+28        <activity
+28-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:21:9-24:76
+29            android:name="com.mykholy.myuniversity.ui.ForgotPasswordActivity"
+29-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:22:13-54
+30            android:screenOrientation="portrait"
+30-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:23:13-49
+31            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+31-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:24:13-73
+32        <activity
+32-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:25:9-29:76
+33            android:name="com.mykholy.myuniversity.ui.RegisterActivity"
+33-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:26:13-48
+34            android:parentActivityName="com.mykholy.myuniversity.ui.LoginActivity"
+34-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:27:13-59
+35            android:screenOrientation="portrait"
+35-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:28:13-49
+36            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+36-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:29:13-73
+37        <activity
+37-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:30:9-33:76
+38            android:name="com.mykholy.myuniversity.ui.LoginActivity"
+38-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:31:13-45
+39            android:screenOrientation="portrait"
+39-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:32:13-49
+40            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+40-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:33:13-73
+41        <activity
+41-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:34:9-43:20
+42            android:name="com.mykholy.myuniversity.ui.SplashScreenActivity"
+42-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:35:13-52
+43            android:screenOrientation="portrait"
+43-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:36:13-49
+44            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+44-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:37:13-73
+45            <intent-filter>
+45-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:38:13-42:29
+46                <action android:name="android.intent.action.MAIN" />
+46-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:39:17-69
+46-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:39:25-66
+47
+48                <category android:name="android.intent.category.LAUNCHER" />
+48-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:41:17-77
+48-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:41:27-74
+49            </intent-filter>
+50        </activity>
+51        <activity
+51-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:44:9-47:76
+52            android:name="com.mykholy.myuniversity.ui.MainActivity"
+52-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:45:13-44
+53            android:screenOrientation="portrait"
+53-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:46:13-49
+54            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+54-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:47:13-73
+55    </application>
+56
+57</manifest>
