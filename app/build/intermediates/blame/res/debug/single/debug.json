@@ -1104,6 +1104,10 @@
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\c4f051de4d8c8a7d5b53f3e9ccfe2014\\material-1.2.0-alpha06\\res\\drawable\\design_ic_visibility_off.xml"
     },
     {
+        "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_check.png.flat",
+        "source": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_check.png"
+    },
+    {
         "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\anim_btn_radio_to_on_mtrl_dot_group_animation.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\anim\\btn_radio_to_on_mtrl_dot_group_animation.xml"
     },
@@ -1594,6 +1598,10 @@
     {
         "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_sort.png.flat",
         "source": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_sort.png"
+    },
+    {
+        "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_check.xml.flat",
+        "source": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_check.xml"
     },
     {
         "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_bg_dialog.xml.flat",
@@ -2716,6 +2724,10 @@
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
+        "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_check.png.flat",
+        "source": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_check.png"
+    },
+    {
         "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_singlechoice_material.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
@@ -2836,6 +2848,10 @@
         "source": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\src\\main\\res\\layout\\custom_spinner.xml"
     },
     {
+        "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_check.png.flat",
+        "source": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_check.png"
+    },
+    {
         "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_about_us.png.flat",
         "source": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_about_us.png"
     },
@@ -2954,6 +2970,10 @@
     {
         "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_in_top.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_check.png.flat",
+        "source": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_check.png"
     },
     {
         "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mybg4.xml.flat",
@@ -3284,6 +3304,10 @@
         "source": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_table.png"
     },
     {
+        "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_check.png.flat",
+        "source": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_check.png"
+    },
+    {
         "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_layout_snackbar.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\c4f051de4d8c8a7d5b53f3e9ccfe2014\\material-1.2.0-alpha06\\res\\layout\\mtrl_layout_snackbar.xml"
     },
@@ -3318,6 +3342,10 @@
     {
         "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_seek_thumb.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\color\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_check.png.flat",
+        "source": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_check.png"
     },
     {
         "merged": "H:\\Android_Studio\\Projects\\MyUniversity\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo_name.png.flat",

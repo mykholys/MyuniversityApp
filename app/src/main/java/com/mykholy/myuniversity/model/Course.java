@@ -1,27 +1,44 @@
 package com.mykholy.myuniversity.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 public class Course implements Serializable {
 
 
-    public Course(Integer cId, String cName, String cImage) {
+    @SerializedName("C_id")
+    @Expose
+    private Integer cId;
+    @SerializedName("C_Name")
+    @Expose
+    private String cName;
+    @SerializedName("C_image")
+    @Expose
+    private String cImage;
+    @SerializedName("AcademicYear")
+    @Expose
+    private Integer academicYear;
+    @SerializedName("Term")
+    @Expose
+    private Integer term;
+    @SerializedName("D_id")
+    @Expose
+    private Integer dId;
+    @SerializedName("Dept_ID")
+    @Expose
+    private Integer deptID;
+
+    public Course(Integer cId, String cName, String cImage, Integer academicYear, Integer term, Integer dId, Integer deptID) {
         this.cId = cId;
         this.cName = cName;
         this.cImage = cImage;
+        this.academicYear = academicYear;
+        this.term = term;
+        this.dId = dId;
+        this.deptID = deptID;
     }
-
-    private Integer cId;
-
-    private String cName;
-
-    private String cImage;
-
-    private Integer academicYear;
-
-    private Integer term;
-
-    private Integer dId;
 
     public Integer getCId() {
         return cId;
@@ -69,5 +86,13 @@ public class Course implements Serializable {
 
     public void setDId(Integer dId) {
         this.dId = dId;
+    }
+
+    public Integer getDeptID() {
+        return deptID;
+    }
+
+    public void setDeptID(Integer deptID) {
+        this.deptID = deptID;
     }
 }

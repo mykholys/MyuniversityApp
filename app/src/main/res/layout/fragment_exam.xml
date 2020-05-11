@@ -29,4 +29,25 @@
         app:tint="@color/white"
         />
 
+    <TextView
+        android:id="@+id/ExamFragment_tv_no_exam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_16ssp"
+        android:layout_gravity="center"
+        android:text="@string/there_are_no_exams"
+        android:visibility="invisible"/>
+    <com.github.loadingview.LoadingView
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lv_duration="15"
+        app:lv_end_color="@color/color_end_btn"
+        app:lv_external_radius="28dp"
+        app:lv_internal_radius="6dp"
+        android:background="@color/dark_alpha_50"
+        app:lv_start_color="@color/color_start_btn"
+
+        />
+
 </FrameLayout>

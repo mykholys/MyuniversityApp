@@ -18,6 +18,7 @@ public class SPreferences {
     private final String STUDENT_IMAGE = "student_image";
     private final String STUDENT_ACADEMIC_YEAR = "student_academic_year";
     private final String STUDENT_DEPT_ID = "student_dept_id";
+    private final String STUDENT_DEPT_NAME = "student_dept_name";
 
 
     private Context context;
@@ -110,7 +111,7 @@ public class SPreferences {
     }
 
     public void setSTUDENT_IMAGE(String student_image) {
-        sp.edit().putString(STUDENT_NAME, student_image).apply();
+        sp.edit().putString(STUDENT_IMAGE, student_image).apply();
 
     }
 
@@ -120,7 +121,7 @@ public class SPreferences {
     }
 
     public void setSTUDENT_ACADEMIC_YEAR(int academic_year) {
-        sp.edit().putInt(STUDENT_NAME, academic_year).apply();
+        sp.edit().putInt(STUDENT_ACADEMIC_YEAR, academic_year).apply();
 
     }
 
@@ -130,7 +131,17 @@ public class SPreferences {
     }
 
     public void setSTUDENT_DEPT_ID(int dept_id) {
-        sp.edit().putInt(STUDENT_NAME, dept_id).apply();
+        sp.edit().putInt(STUDENT_DEPT_ID, dept_id).apply();
+
+    }
+
+    public String getSTUDENT_DEPT_NAME() {
+        return sp.getString(STUDENT_DEPT_NAME, "Nan");
+
+    }
+
+    public void setSTUDENT_DEPT_NAME(String dept_name) {
+        sp.edit().putString(STUDENT_DEPT_NAME, dept_name).apply();
 
     }
 
@@ -143,5 +154,9 @@ public class SPreferences {
         return sp.getString(LANGUAGE, "en");
     }
     //-----------------
+    public void setClearAll() {
+        sp.edit().clear().apply();
+    }
+
 
 }

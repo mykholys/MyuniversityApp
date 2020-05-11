@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.mykholy.myuniversity.API.AppClient;
 import com.mykholy.myuniversity.MyInterface.OnRecyclerViewCourse;
 import com.mykholy.myuniversity.R;
 import com.mykholy.myuniversity.model.Course;
@@ -43,7 +44,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         Glide.with(context)
-                .load(data.get(position).getCImage())
+                .load(AppClient.BASE_URL + "public/images/Courses/"+data.get(position).getCImage())
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.rec_course_iv_course);
 

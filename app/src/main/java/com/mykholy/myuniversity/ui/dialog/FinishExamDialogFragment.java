@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,6 +78,8 @@ public class FinishExamDialogFragment extends DialogFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setUi(view);
+        Log.i("Score_mS", String.valueOf(mScore));
+        Log.i("Score_mQ", String.valueOf(mQuestionTotal));
         if (mScore < mQuestionTotal) setFail();
         else
             setPass();
@@ -98,12 +101,12 @@ public class FinishExamDialogFragment extends DialogFragment {
 
     private void setFail() {
         FinishExamDialogFragment_tv_title.setText(getString(R.string.you_failed));
-        FinishExamDialogFragment_tv_result.setText(String.format(Locale.getDefault(),"%s %d/%d", getString(R.string.your_result), mScore, mQuestionTotal));
+        FinishExamDialogFragment_tv_result.setText(String.format(Locale.getDefault(), "%s %d/%d", getString(R.string.your_result), mScore, mQuestionTotal));
     }
 
     private void setPass() {
         FinishExamDialogFragment_tv_title.setText(getString(R.string.you_passed));
-        FinishExamDialogFragment_tv_result.setText(String.format(Locale.getDefault(),"%s %d/%d", getString(R.string.your_result), mScore, mQuestionTotal));
+        FinishExamDialogFragment_tv_result.setText(String.format(Locale.getDefault(), "%s %d/%d", getString(R.string.your_result), mScore, mQuestionTotal));
     }
 
     @Override

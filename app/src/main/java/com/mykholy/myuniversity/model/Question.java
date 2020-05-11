@@ -1,40 +1,50 @@
 package com.mykholy.myuniversity.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 public class Question implements Serializable {
 
+    @SerializedName("Q_Id")
+    @Expose
     private Integer qId;
-
+    @SerializedName("Title")
+    @Expose
     private String title;
-
+    @SerializedName("option_a")
+    @Expose
     private String optionA;
-
+    @SerializedName("option_b")
+    @Expose
     private String optionB;
-
+    @SerializedName("option_c")
+    @Expose
     private String optionC;
-
+    @SerializedName("option_d")
+    @Expose
     private String optionD;
-
+    @SerializedName("Ans")
+    @Expose
     private String ans;
-
+    @SerializedName("D_id")
+    @Expose
     private Integer dId;
-
+    @SerializedName("C_Id")
+    @Expose
     private Integer cId;
-
+    @SerializedName("E_ID")
+    @Expose
     private Integer eID;
+    @SerializedName("S_id")
+    @Expose
+    private Integer sID;
 
-    public Question(Integer qId, String title, String optionA, String optionB, String optionC, String optionD, String ans, Integer dId, Integer cId, Integer eID) {
+    public Question(Integer qId, String ans, Integer sID) {
         this.qId = qId;
-        this.title = title;
-        this.optionA = optionA;
-        this.optionB = optionB;
-        this.optionC = optionC;
-        this.optionD = optionD;
         this.ans = ans;
-        this.dId = dId;
-        this.cId = cId;
-        this.eID = eID;
+        this.sID = sID;
     }
 
     public Integer getQId() {
@@ -117,4 +127,11 @@ public class Question implements Serializable {
         this.eID = eID;
     }
 
+    public Integer getsID() {
+        return sID;
+    }
+
+    public void setsID(Integer sID) {
+        this.sID = sID;
+    }
 }

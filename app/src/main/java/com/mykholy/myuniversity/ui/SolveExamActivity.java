@@ -1,7 +1,13 @@
 package com.mykholy.myuniversity.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -13,11 +19,15 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.loadingview.LoadingView;
+import com.mykholy.myuniversity.API.API_Interface;
+import com.mykholy.myuniversity.API.AppClient;
 import com.mykholy.myuniversity.R;
 import com.mykholy.myuniversity.model.Course;
 import com.mykholy.myuniversity.model.Exam;
 import com.mykholy.myuniversity.model.Question;
 import com.mykholy.myuniversity.ui.dialog.FinishExamDialogFragment;
+import com.mykholy.myuniversity.utilities.Constants;
 import com.pranavpandey.android.dynamic.toasts.DynamicToast;
 
 import java.util.Collections;
@@ -48,6 +58,9 @@ public class SolveExamActivity extends AppCompatActivity implements FinishExamDi
     private int questionCounterTotal;
     private Question cuurentQuestion;
     private int score;
+    private API_Interface api_interface;
+    private LoadingView loadingView;
+    private String token;
 
 
     @Override
@@ -56,6 +69,7 @@ public class SolveExamActivity extends AppCompatActivity implements FinishExamDi
         setFullScreen();
         setContentView(R.layout.activity_solve_exam);
         setUi();
+        setApi();
 
 
         Bundle extras = getIntent().getExtras();
@@ -111,8 +125,6 @@ public class SolveExamActivity extends AppCompatActivity implements FinishExamDi
 
     private void checkAnswer() {
         countDownTimer.cancel();
-        if (cuurentQuestion.getAns().equals(student_answered))
-            score++;
         saveAnswer(student_answered);
 
 
@@ -124,10 +136,33 @@ public class SolveExamActivity extends AppCompatActivity implements FinishExamDi
     }
 
     private void saveAnswer(String ans) {
-        //save answer in db
+        loadingView.start();
 
-        //show nex question
-        showNextQuestion();
+        Call<Question> call = api_interface.saveMyAnswer(token, new Question(cuurentQuestion.getQId(), ans, Constants.getSPreferences(this).getSTUDENT_ID()));
+        call.enqueue(new Callback<Question>() {
+            @Override
+            public void onResponse(@NonNull Call<Question> call, @NonNull Response<Question> response) {
+                if (response.isSuccessful()) {
+                    Log.i("student_answered", "in 200:" + student_answered);
+                    if (cuurentQuestion.getAns().equals(student_answered))
+                        score++;
+                    loadingView.stop();
+                    showNextQuestion();
+                } else {
+                    Log.i("student_answered", "in else:" + student_answered + "\n" + response.toString());
+                }
+
+                loadingView.stop();
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Question> call, @NonNull Throwable t) {
+                loadingView.stop();
+                Log.i("onFailure_call", call.request().toString());
+                Log.i("onFailure:", t.toString());
+            }
+        });
+
     }
 
     private void setFullScreen() {
@@ -148,7 +183,16 @@ public class SolveExamActivity extends AppCompatActivity implements FinishExamDi
         SolveExamActivity_rb_c = findViewById(R.id.SolveExamActivity_rb_c);
         SolveExamActivity_rb_d = findViewById(R.id.SolveExamActivity_rb_d);
         SolveExamActivity_btn_Next = findViewById(R.id.SolveExamActivity_btn_Next);
+        loadingView = findViewById(R.id.loadingView);
+        loadingView.stop();
 
+
+    }
+
+    private void setApi() {
+
+        api_interface = AppClient.getClient().create(API_Interface.class);
+        token = Constants.getSPreferences(this).getType_Token() + " " + Constants.getSPreferences(this).getToken();
 
     }
 
@@ -210,7 +254,7 @@ public class SolveExamActivity extends AppCompatActivity implements FinishExamDi
             SolveExamActivity_rb_d.setText(cuurentQuestion.getOptionD());
 
             questionCounter++;
-            SolveExamActivity_tv_exam_num_questions.setText(String.format("%s%d /%d", getString(R.string.question), questionCounter, questionCounterTotal));
+            SolveExamActivity_tv_exam_num_questions.setText(String.format(Locale.getDefault(), "%s%d /%d", getString(R.string.question), questionCounter, questionCounterTotal));
 
             student_answered = "0";
             if (questionCounter == questionCounterTotal)
@@ -230,15 +274,39 @@ public class SolveExamActivity extends AppCompatActivity implements FinishExamDi
         int hour = (int) ((mTotalTimeTaken) / 60 / 60);
         int minutes = (int) ((mTotalTimeTaken) / 60);
         int seconds = (int) ((mTotalTimeTaken) % 60);
-        FinishExamDialogFragment finishExamDialogFragment = FinishExamDialogFragment.newInstance(score, questionCounterTotal);
-        finishExamDialogFragment.setCancelable(false);
-        finishExamDialogFragment.show(getSupportFragmentManager(), null);
+        loadingView.start();
+        Call<Exam> call = api_interface.saveExam(token, new Exam(exam.geteId(), Constants.getSPreferences(this).getSTUDENT_ID(), score, String.format(Locale.getDefault(), "%02d:%02d:%02d", hour, minutes, seconds)));
+        if (countDownTimer != null)
+            countDownTimer.cancel();
+        if (ct != null)
+            ct.cancel();
+        call.enqueue(new Callback<Exam>() {
+            @Override
+            public void onResponse(@NonNull Call<Exam> call, @NonNull Response<Exam> response) {
+                Log.i("finishExam", "before if");
+                Log.i("finishExam", "before if" + response.toString());
+                loadingView.stop();
+                if (response.isSuccessful()) {
+                    Log.i("finishExam", "in if 200");
+                    Log.i("finishExam", "in if 200" + response.toString());
+                    FinishExamDialogFragment finishExamDialogFragment = FinishExamDialogFragment.newInstance(score, questionCounterTotal);
+                    finishExamDialogFragment.setCancelable(false);
+                    finishExamDialogFragment.show(getSupportFragmentManager(), null);
+                } else {
+                    Log.i("finishExam", "in else");
+                    Log.i("finishExam", "in else" + response.toString());
 
-        //save exam in db
-        Log.i("score:", String.valueOf(score));
-        Log.i("totaltime:", String.valueOf(mTotalTimeTaken));
-//        DynamicToast.makeSuccess(SolveExamActivity.this, "Your Score:" + score);
-//        DynamicToast.makeSuccess(SolveExamActivity.this, "total time:" + String.format("%02d:%02d:%02d", hour, minutes, seconds));
+                    //finishExam();
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Exam> call, @NonNull Throwable t) {
+                loadingView.stop();
+                Log.i("onFailure:", t.getMessage());
+            }
+        });
+
 
     }
 
@@ -252,11 +320,19 @@ public class SolveExamActivity extends AppCompatActivity implements FinishExamDi
 
     @Override
     public void onFragmentInteraction() {
-        countDownTimer.cancel();
-        ct.cancel();
 
+        Intent intent = getIntent();
+        setResult(RESULT_OK, intent);
         finish();
+
+
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
 
     public class MyCounterUp extends CountDownTimer {
 

@@ -28,6 +28,19 @@
         android:layout_alignParentBottom="true"
         android:layout_below="@+id/DetailsCourseActivity_tab_layout"
         />
+    <com.github.loadingview.LoadingView
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        app:lv_duration="15"
+        app:lv_end_color="@color/color_end_btn"
+        app:lv_external_radius="28dp"
+        app:lv_internal_radius="6dp"
+        android:background="@color/dark_alpha_50"
+        app:lv_start_color="@color/color_start_btn"
+        />
 
 
 </RelativeLayout>

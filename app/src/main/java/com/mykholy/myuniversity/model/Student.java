@@ -16,6 +16,9 @@ public class Student {
     @SerializedName("password")
     @Expose
     private String password;
+    @SerializedName("current_password")
+    @Expose
+    private String current_password;
     @SerializedName("N_id_n")
     @Expose
     private String nIdN;
@@ -43,6 +46,12 @@ public class Student {
     @SerializedName("Dept_ID")
     @Expose
     private Integer deptID;
+    @SerializedName("Dept_Name")
+    @Expose
+    private String deptName;
+    @SerializedName("_method")
+    @Expose
+    private String _method;
 
     public Student(String sFullName, String email, String password, String nIdN, String phone, String birthdate, String gender, String state, Integer academicYear, Integer deptID) {
         this.sFullName = sFullName;
@@ -55,6 +64,28 @@ public class Student {
         this.state = state;
         this.academicYear = academicYear;
         this.deptID = deptID;
+
+    }
+
+    public Student(String sFullName, String password, String current_password, String _method) {
+        this.sFullName = sFullName;
+        this.password = password;
+        this.current_password = current_password;
+        this._method = _method;
+    }
+
+    public Student(String sFullName, String email, String password, String nIdN, String phone, String birthdate, String gender, String state, Integer academicYear, Integer deptID, String deptName) {
+        this.sFullName = sFullName;
+        this.email = email;
+        this.password = password;
+        this.nIdN = nIdN;
+        this.phone = phone;
+        this.birthdate = birthdate;
+        this.gender = gender;
+        this.state = state;
+        this.academicYear = academicYear;
+        this.deptID = deptID;
+        this.deptName = deptName;
     }
 
     public Integer getId() {
@@ -159,5 +190,29 @@ public class Student {
 
     public void setDeptID(Integer deptID) {
         this.deptID = deptID;
+    }
+
+    public String getDeptName() {
+        return deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
+
+    public String get_method() {
+        return _method;
+    }
+
+    public void set_method(String _method){
+        this._method = _method;
+    }
+
+    public String getCurrent_password() {
+        return current_password;
+    }
+
+    public void setCurrent_password(String current_password) {
+        this.current_password = current_password;
     }
 }

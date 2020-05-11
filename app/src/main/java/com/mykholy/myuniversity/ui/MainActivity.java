@@ -26,7 +26,7 @@ import com.mykholy.myuniversity.ui.dialog.DialogFragment;
 import com.mykholy.myuniversity.utilities.Constants;
 import com.mykholy.myuniversity.utilities.LanguageHelper;
 
-import java.io.Serializable;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, DialogFragment.OnFragmentInteractionListener, CourseFragment.OnFragmentInteractionListener {
     private MeowBottomNavigation meo;
@@ -214,6 +214,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 drawerLayout.closeDrawers();
                 break;
             case R.id.menu_logout:
+                Constants.getSPreferences(this).setClearAll();
                 Constants.getSPreferences(this).setLogIn(false);
                 drawerLayout.closeDrawers();
                 Intent LoginIntent = new Intent(this, LoginActivity.class);

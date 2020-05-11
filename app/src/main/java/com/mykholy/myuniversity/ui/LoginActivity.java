@@ -114,9 +114,11 @@ public class LoginActivity extends AppCompatActivity {
                     getStudentInformation();
 
 
-                } else if (response.code() == 401)
+                } else if (response.code() == 401) {
+                    loadingView.stop();
                     DynamicToast.makeWarning(LoginActivity.this, getString(R.string.email_pass_incorrect)).show();
-                loadingView.stop();
+                } else
+                    loadingView.stop();
 
             }
 
@@ -148,6 +150,7 @@ public class LoginActivity extends AppCompatActivity {
                     Constants.getSPreferences(LoginActivity.this).setSTUDENT_IMAGE(response.body().getImage());
                     Constants.getSPreferences(LoginActivity.this).setSTUDENT_ACADEMIC_YEAR(response.body().getAcademicYear());
                     Constants.getSPreferences(LoginActivity.this).setSTUDENT_DEPT_ID(response.body().getDeptID());
+                    Constants.getSPreferences(LoginActivity.this).setSTUDENT_DEPT_NAME(response.body().getDeptName());
                     Intent MainIntent = new Intent(LoginActivity.this, MainActivity.class);
                     loadingView.stop();
                     startActivity(MainIntent);

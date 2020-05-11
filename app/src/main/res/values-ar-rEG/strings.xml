@@ -124,4 +124,13 @@
     <string name="no_internet">"لا يوجد إنترنت ، تحقق من الإنترنت وحاول مرة أخرى "</string>
     <string name="email_pass_incorrect">"بريدك الإلكتروني أو كلمة المرور غير صحيحة "</string>
     <string name="account_registerd">تم تسجيل حسابك بنجاح</string>
+    <string name="info_updated">تم تحديث بياناتك بنجاح</string>
+    <string name="current_password_incorrect">"كلمة المرور الحالية غير صحيحة "</string>
+    <string name="there_are_no_lectures">لا يوجد محاضرات</string>
+    <string name="there_are_no_courses">لا يوجد كورسات</string>
+    <string name="there_are_no_exams">لا يوجد امتحانات</string>
+    <string name="start_time_exam">وقت بدء الامتحان هو</string>
+    <string name="can_not_enter_exam_before_time">لا يمكنك دخول الامتحان قبل  الوقت الذي يبدأ فيه</string>
+    <string name="exam_expired">"لا يمكنك دخول الامتحان ، لقد انتهى وقت الامتحان "</string>
+
 </resources>

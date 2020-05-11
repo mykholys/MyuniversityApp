@@ -1,35 +1,59 @@
 package com.mykholy.myuniversity.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 public class Exam  implements Serializable {
-
+    @SerializedName("E_id")
+    @Expose
     private Integer eId;
-
+    @SerializedName("S_id")
+    @Expose
     private Integer sId;
-
+    @SerializedName("Result")
+    @Expose
     private Integer result;
-
+    @SerializedName("TimeSpend")
+    @Expose
     private String timeSpend;
-
+    @SerializedName("Title")
+    @Expose
     private String title;
-
+    @SerializedName("StartDate")
+    @Expose
     private String startDate;
-
+    @SerializedName("EndDate")
+    @Expose
     private String endDate;
-
+    @SerializedName("Timer")
+    @Expose
     private Integer timer;
-
+    @SerializedName("D_id")
+    @Expose
     private Integer dId;
-
+    @SerializedName("C_id")
+    @Expose
     private Integer cId;
-
+    @SerializedName("created_at")
+    @Expose
     private String createdAt;
-
+    @SerializedName("status")
+    @Expose
     private String status;
+    @SerializedName("num_questions")
+    @Expose
     private Integer num_questions;
 
-    public Exam(Integer eId, String title, String startDate, String endDate, Integer timer, Integer dId, Integer cId, String createdAt, String status,Integer num_questions) {
+    public Exam(Integer eId, Integer sId, Integer result, String timeSpend) {
+        this.eId = eId;
+        this.sId = sId;
+        this.result = result;
+        this.timeSpend = timeSpend;
+    }
+
+    public Exam(Integer eId, String title, String startDate, String endDate, Integer timer, Integer dId, Integer cId, String createdAt, String status, Integer num_questions) {
         this.eId = eId;
         this.title = title;
         this.startDate = startDate;

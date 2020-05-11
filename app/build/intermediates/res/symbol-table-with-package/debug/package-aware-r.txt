@@ -2252,6 +2252,7 @@ drawable forgot_dialog_iv
 drawable ic_about_us
 drawable ic_arrow_back_black
 drawable ic_arrow_drop_down
+drawable ic_check
 drawable ic_circle
 drawable ic_circle_sort
 drawable ic_contact_us
@@ -2338,6 +2339,7 @@ id CourseFragment_rv
 id CourseFragment_tv_academic_year
 id CourseFragment_tv_department
 id CourseFragment_tv_name
+id CourseFragment_tv_no_lectures
 id DetailsCourseActivity_tab_layout
 id DetailsCourseActivity_toolbar
 id DialogFragment_rv
@@ -2345,6 +2347,7 @@ id DialogFragment_tv_sub_title
 id DialogFragment_tv_title
 id ExamFragment_fab
 id ExamFragment_rv
+id ExamFragment_tv_no_exam
 id FUNCTION
 id FinishExamDialogFragment_btn_done
 id FinishExamDialogFragment_tv_result
@@ -2358,6 +2361,7 @@ id ForgotPassword_et_email
 id ForgotPassword_tv_forgot_password
 id ForgotPassword_tv_sub_title
 id LectureFragment_rv
+id LectureFragment_tv_no_lectures
 id META
 id ProfileFragment_btn_update
 id ProfileFragment_et_confirm_new_password
@@ -3005,6 +3009,7 @@ string birthdate_not_valid
 string birthdate_required
 string bottom_sheet_behavior
 string cairo
+string can_not_enter_exam_before_time
 string change_language
 string character_counter_content_description
 string character_counter_overflowed_content_description
@@ -3022,6 +3027,7 @@ string congrats
 string contact_us
 string create_an_account
 string current_password
+string current_password_incorrect
 string dakahlia
 string damietta
 string department
@@ -3034,6 +3040,7 @@ string email_pass_incorrect
 string email_required
 string end_date
 string error_icon_content_description
+string exam_expired
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -3053,6 +3060,7 @@ string giza
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string info_updated
 string ismailia
 string kafr_el_sheikh
 string location
@@ -3146,12 +3154,16 @@ string sohag
 string solved_exams
 string south_sinai
 string start_date
+string start_time_exam
 string state
 string state_required
 string status_bar_notification_info_overflow
 string submit
 string suez
 string table
+string there_are_no_courses
+string there_are_no_exams
+string there_are_no_lectures
 string time_per_question
 string time_taken
 string title

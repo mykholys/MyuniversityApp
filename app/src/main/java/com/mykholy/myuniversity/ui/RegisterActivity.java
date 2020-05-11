@@ -18,6 +18,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.github.loadingview.LoadingView;
 import com.mykholy.myuniversity.API.API_Interface;
@@ -29,6 +30,7 @@ import com.mykholy.myuniversity.model.Student;
 import com.mykholy.myuniversity.ui.dialog.DialogFragment;
 import com.mykholy.myuniversity.utilities.Check;
 import com.mykholy.myuniversity.utilities.ConnectionUtils;
+import com.mykholy.myuniversity.utilities.ErrorUtils;
 import com.pranavpandey.android.dynamic.toasts.DynamicToast;
 
 import java.text.ParseException;
@@ -39,7 +41,7 @@ import java.util.Date;
 
 public class RegisterActivity extends AppCompatActivity implements DialogFragment.OnFragmentInteractionListener, View.OnClickListener, TextWatcher {
 
-    private final int TAG_ID=1;
+
     private EditText Register_et_full_name, Register_et_email, Register_et_password, Register_et_national_id,
             Register_et_phone, Register_et_birthdate, Register_et_state, Register_et_gender,
             Register_et_academic_year, Register_et_department;
@@ -86,18 +88,98 @@ public class RegisterActivity extends AppCompatActivity implements DialogFragmen
     }
 
     private void RegisterApi() {
-        Log.i("tag_id", (String) Register_et_department.getTag(TAG_ID));
-        Call<Student> call = api_interface.Register(new Student(input_full_name, input_email, input_password, input_national_id, input_phone, input_bdate, input_gender, input_state, Integer.parseInt(input_academic_year), (Integer) Register_et_department.getTag(TAG_ID)));
+        if ((Integer) Register_et_gender.getTag() == 1) input_gender = "m";
+        else input_gender = "f";
+        Call<Student> call = api_interface.Register(new Student(input_full_name, input_email, input_password, input_national_id, input_phone, input_bdate, input_gender, input_state, Integer.parseInt(input_academic_year), (Integer) Register_et_department.getTag()));
         call.enqueue(new Callback<Student>() {
             @Override
             public void onResponse(@NonNull Call<Student> call, @NonNull Response<Student> response) {
                 loadingView.stop();
                 if (response.isSuccessful()) {
                     assert response.body() != null;
-                    DynamicToast.makeSuccess(RegisterActivity.this, getString(R.string.account_registerd)).show();
+                    DynamicToast.makeSuccess(RegisterActivity.this, getString(R.string.account_registerd), 5).show();
+                    finish();
                 } else if (response.code() == 400) {
                     assert response.body() != null;
-                    Log.i("errorBody:", String.valueOf(response.errorBody()));
+                    ErrorStudentRegister errorStudentRegister = ErrorUtils.parseError(response);
+
+                    if (errorStudentRegister.getEmail() != null) {
+                        Register_et_email.setError(errorStudentRegister.getEmail().get(0));
+                        Register_et_email.setBackgroundResource(R.drawable.custom_bg_et_error);
+                        Register_et_email.setFocusable(true);
+                        Log.i("error_email:", String.valueOf(errorStudentRegister.getEmail().size()));
+                    }
+                    if (errorStudentRegister.getNIdN() != null) {
+                        Register_et_national_id.setError(errorStudentRegister.getNIdN().get(0));
+                        Register_et_national_id.setBackgroundResource(R.drawable.custom_bg_et_error);
+                        Register_et_national_id.setFocusable(true);
+                        Log.i("error_national_id:", String.valueOf(errorStudentRegister.getNIdN().size()));
+                    }
+                    if (errorStudentRegister.getMsg() != null) {
+                        Register_et_national_id.setError(errorStudentRegister.getMsg());
+                        Register_et_national_id.setBackgroundResource(R.drawable.custom_bg_et_error);
+                        Register_et_national_id.setFocusable(true);
+
+                    }
+                    if (errorStudentRegister.getAcademicYear() != null) {
+                        Register_et_academic_year.setError(errorStudentRegister.getAcademicYear().get(0));
+                        Register_et_academic_year.setBackgroundResource(R.drawable.custom_bg_et_error);
+                        Register_et_academic_year.setFocusable(true);
+                        Log.i("error_academic_year:", String.valueOf(errorStudentRegister.getAcademicYear().size()));
+
+                    }
+                    if (errorStudentRegister.getBirthdate() != null) {
+                        Register_et_birthdate.setError(errorStudentRegister.getBirthdate().get(0));
+                        Register_et_birthdate.setBackgroundResource(R.drawable.custom_bg_et_error);
+                        Register_et_birthdate.setFocusable(true);
+                        DynamicToast.makeWarning(RegisterActivity.this, errorStudentRegister.getBirthdate().get(0)).show();
+                        Log.i("errorStudentRegister:", String.valueOf(errorStudentRegister.getBirthdate().size()));
+                    }
+                    if (errorStudentRegister.getDeptID() != null) {
+                        Register_et_department.setError(errorStudentRegister.getDeptID().get(0));
+                        Register_et_department.setBackgroundResource(R.drawable.custom_bg_et_error);
+                        Register_et_department.setFocusable(true);
+                        DynamicToast.makeWarning(RegisterActivity.this, errorStudentRegister.getDeptID().get(0)).show();
+
+                        Log.i("errorStudentRegister:", String.valueOf(errorStudentRegister.getDeptID().size()));
+                    }
+                    if (errorStudentRegister.getGender() != null) {
+                        Register_et_gender.setError(errorStudentRegister.getGender().get(0));
+                        Register_et_gender.setBackgroundResource(R.drawable.custom_bg_et_error);
+                        Register_et_gender.setFocusable(true);
+                        DynamicToast.makeWarning(RegisterActivity.this, errorStudentRegister.getGender().get(0)).show();
+                        Log.i("errorStudentRegister:", String.valueOf(errorStudentRegister.getGender().size()));
+
+                    }
+                    if (errorStudentRegister.getPassword() != null) {
+                        Register_et_password.setError(errorStudentRegister.getPassword().get(0));
+                        Register_et_password.setBackgroundResource(R.drawable.custom_bg_et_error);
+                        Register_et_password.setFocusable(true);
+                        Log.i("errorStudentRegister:", String.valueOf(errorStudentRegister.getPassword().size()));
+
+                    }
+                    if (errorStudentRegister.getPhone() != null) {
+                        Register_et_phone.setError(errorStudentRegister.getPhone().get(0));
+                        Register_et_phone.setBackgroundResource(R.drawable.custom_bg_et_error);
+                        Register_et_phone.setFocusable(true);
+                        Log.i("errorStudentRegister:", String.valueOf(errorStudentRegister.getPhone().size()));
+
+                    }
+                    if (errorStudentRegister.getSFullName() != null) {
+                        Register_et_full_name.setError(errorStudentRegister.getSFullName().get(0));
+                        Register_et_full_name.setBackgroundResource(R.drawable.custom_bg_et_error);
+                        Register_et_full_name.setFocusable(true);
+                        Log.i("errorStudentRegister:", String.valueOf(errorStudentRegister.getSFullName().size()));
+
+                    }
+                    if (errorStudentRegister.getState() != null) {
+                        Register_et_state.setError(errorStudentRegister.getState().get(0));
+                        Register_et_state.setBackgroundResource(R.drawable.custom_bg_et_error);
+                        Register_et_state.setFocusable(true);
+                        DynamicToast.makeWarning(RegisterActivity.this, errorStudentRegister.getState().get(0)).show();
+                        Log.i("errorStudentRegister:", String.valueOf(errorStudentRegister.getState().size()));
+                    }
+                    Log.i("errorStudentRegister:", String.valueOf(errorStudentRegister));
 
                 }
             }
@@ -123,6 +205,7 @@ public class RegisterActivity extends AppCompatActivity implements DialogFragmen
             Register_et_gender.setError(null);
             Register_et_gender.setBackgroundResource(R.drawable.custom_bg_et);
             Register_et_gender.setText(dialog.getName());
+            Register_et_gender.setTag(dialog.getId());
         } else if (title.equals(getString(R.string.academic_year))) {
             Register_et_academic_year.setError(null);
             Register_et_academic_year.setBackgroundResource(R.drawable.custom_bg_et);
@@ -131,7 +214,7 @@ public class RegisterActivity extends AppCompatActivity implements DialogFragmen
             Register_et_department.setError(null);
             Register_et_department.setBackgroundResource(R.drawable.custom_bg_et);
             Register_et_department.setText(dialog.getName());
-            Register_et_department.setTag(TAG_ID,dialog.getId());
+            Register_et_department.setTag(dialog.getId());
         }
     }
 

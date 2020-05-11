@@ -1,27 +1,28 @@
 package com.mykholy.myuniversity.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Lecture {
 
+    @SerializedName("Lec_id")
+    @Expose
     private Integer lecId;
-
+    @SerializedName("Name")
+    @Expose
     private String name;
-
+    @SerializedName("File")
+    @Expose
     private String file;
-
+    @SerializedName("C_id")
+    @Expose
     private Integer cId;
-
+    @SerializedName("D_id")
+    @Expose
     private Integer dId;
-
+    @SerializedName("created_at")
+    @Expose
     private String createdAt;
-
-    public Lecture(Integer lecId, String name, String file, Integer cId, Integer dId, String createdAt) {
-        this.lecId = lecId;
-        this.name = name;
-        this.file = file;
-        this.cId = cId;
-        this.dId = dId;
-        this.createdAt = createdAt;
-    }
 
     public Integer getLecId() {
         return lecId;
@@ -70,6 +71,4 @@ public class Lecture {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
-
-
 }

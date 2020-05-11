@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -75,11 +76,34 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/CourseFragment_iv_bg"
         android:layout_marginTop="@dimen/_minus35sdp"
-        android:paddingTop="@dimen/_10sdp"
+        android:clipToPadding="false"
         android:paddingStart="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp"
         android:paddingEnd="@dimen/_10sdp"
         android:paddingBottom="@dimen/_60sdp"
-        android:clipToPadding="false"
-        android:scrollbarStyle="outsideOverlay"/>
+        android:scrollbarStyle="outsideOverlay" />
+
+    <TextView
+        android:id="@+id/CourseFragment_tv_no_lectures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/there_are_no_lectures"
+        android:textSize="@dimen/_16ssp"
+        android:visibility="invisible" />
+
+    <com.github.loadingview.LoadingView
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/dark_alpha_50"
+        app:lv_duration="15"
+        app:lv_end_color="@color/color_end_btn"
+        app:lv_external_radius="28dp"
+        app:lv_internal_radius="6dp"
+        app:lv_start_color="@color/color_start_btn"
+        />
 
 </RelativeLayout>

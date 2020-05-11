@@ -145,6 +145,14 @@
     <string name="email_pass_incorrect">Your email or password incorrect</string>
     <string name="no_internet">No internet, check the internet and try again</string>
     <string name="account_registerd">Your account has been successfully registered</string>
+    <string name="info_updated">Your information has been successfully updated</string>
+    <string name="current_password_incorrect">Current password incorrect</string>
+    <string name="there_are_no_lectures">There are no lectures</string>
+    <string name="there_are_no_courses">There are no courses</string>
+    <string name="there_are_no_exams">There are no exams</string>
+    <string name="can_not_enter_exam_before_time">You cannot enter the exam before the time it begin</string>
+    <string name="start_time_exam">The start time of the exam is</string>
+    <string name="exam_expired">You cannot enter the exam, The exam time has expired</string>
 
 
 </resources>

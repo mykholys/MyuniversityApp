@@ -10,6 +10,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +23,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.github.loadingview.LoadingView;
+import com.mykholy.myuniversity.API.API_Interface;
+import com.mykholy.myuniversity.API.AppClient;
 import com.mykholy.myuniversity.MyInterface.OnRecyclerViewCourse;
 import com.mykholy.myuniversity.MyInterface.OnRecyclerViewLecture;
 import com.mykholy.myuniversity.R;
@@ -27,6 +33,7 @@ import com.mykholy.myuniversity.adapter.CourseAdapter;
 import com.mykholy.myuniversity.adapter.LectureAdapter;
 import com.mykholy.myuniversity.model.Course;
 import com.mykholy.myuniversity.model.Lecture;
+import com.mykholy.myuniversity.utilities.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,9 +41,12 @@ import java.util.List;
 
 public class LectureFragment extends Fragment {
 
-    RecyclerView LectureFragment_rv;
-    List<Lecture> lectures;
-    LectureAdapter adapter;
+    private RecyclerView LectureFragment_rv;
+    private List<Lecture> lectures;
+    private LectureAdapter adapter;
+    private API_Interface api_interface;
+    private LoadingView loadingView;
+    private TextView LectureFragment_tv_no_lectures;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
@@ -87,41 +97,65 @@ public class LectureFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         LectureFragment_rv = view.findViewById(R.id.LectureFragment_rv);
+        loadingView = view.findViewById(R.id.loadingView);
+        LectureFragment_tv_no_lectures = view.findViewById(R.id.LectureFragment_tv_no_lectures);
+        setApi();
         setData();
     }
 
     private void setData() {
 
         loadData();
-        adapter = new LectureAdapter(getActivity(), lectures, new OnRecyclerViewLecture() {
-            @Override
-            public void OnClickItemListener(Lecture lecture) {
-
-                Log.i("lecture:", lecture.getLecId()+ "\n" + lecture.getName() + "\n" + "\n" + lecture.getFile() + "\n" + "\n" + lecture.getCId() + "\n"  + "\n" + lecture.getDId() + "\n" + lecture.getCreatedAt()+ "\n=============");
-//                mListener.onFragmentInteraction(lectures);
-            }
-        });
-        LectureFragment_rv.setAdapter(adapter);
-
-        LectureFragment_rv.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
     }
 
+    private void setApi() {
+
+        api_interface = AppClient.getClient().create(API_Interface.class);
+    }
+
+
     private void loadData() {
         lectures = new ArrayList<>();
-        lectures.add(new Lecture(1, "Android", "https://pngimg.com/uploads/android_logo/android_logo_PNG22.png",1,2,"2020-01-02"));
-        lectures.add(new Lecture(2, "Android2", "https://pngimg.com/uploads/android_logo/android_logo_PNG22.png",1,2,"2020-01-02"));
-        lectures.add(new Lecture(3, "Android3", "https://pngimg.com/uploads/android_logo/android_logo_PNG22.png",1,2,"2020-01-02"));
-        lectures.add(new Lecture(4, "Android4", "https://pngimg.com/uploads/android_logo/android_logo_PNG22.png",1,2,"2020-01-02"));
-        lectures.add(new Lecture(5, "Android5", "https://pngimg.com/uploads/android_logo/android_logo_PNG22.png",1,2,"2020-01-02"));
-        lectures.add(new Lecture(6, "Android6", "https://pngimg.com/uploads/android_logo/android_logo_PNG22.png",1,2,"2020-01-02"));
-        lectures.add(new Lecture(7, "Android7", "https://pngimg.com/uploads/android_logo/android_logo_PNG22.png",1,2,"2020-01-02"));
-        lectures.add(new Lecture(8, "Android8", "https://pngimg.com/uploads/android_logo/android_logo_PNG22.png",1,2,"2020-01-02"));
-        lectures.add(new Lecture(9, "Android9", "https://pngimg.com/uploads/android_logo/android_logo_PNG22.png",1,2,"2020-01-02"));
-        lectures.add(new Lecture(10, "Android10", "https://pngimg.com/uploads/android_logo/android_logo_PNG22.png",1,2,"2020-01-02"));
-        lectures.add(new Lecture(11, "Android11", "https://pngimg.com/uploads/android_logo/android_logo_PNG22.png",1,2,"2020-01-02"));
+        loadingView.start();
+        String token = Constants.getSPreferences(getActivity()).getType_Token() + " " + Constants.getSPreferences(getActivity()).getToken();
 
+
+        Call<List<Lecture>> call = api_interface.getAllLectures(token, mCourse.getCId());
+        call.enqueue(new Callback<List<Lecture>>() {
+            @Override
+            public void onResponse(@NonNull Call<List<Lecture>> call, @NonNull Response<List<Lecture>> response) {
+                if (response.isSuccessful()) {
+                    assert response.body() != null;
+                    if (response.body().size() != 0) {
+                        LectureFragment_tv_no_lectures.setVisibility(View.INVISIBLE);
+                        lectures.addAll(response.body());
+                        adapter = new LectureAdapter(getActivity(), lectures, new OnRecyclerViewLecture() {
+                            @Override
+                            public void OnClickItemListener(Lecture lecture) {
+
+                                Log.i("lecture:", lecture.getLecId() + "\n" + lecture.getName() + "\n" + "\n" + lecture.getFile() + "\n" + "\n" + lecture.getCId() + "\n" + "\n" + lecture.getDId() + "\n" + lecture.getCreatedAt() + "\n=============");
+                                //                mListener.onFragmentInteraction(lectures);
+                            }
+                        });
+                        LectureFragment_rv.setAdapter(adapter);
+
+                        LectureFragment_rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+                    } else
+                        LectureFragment_tv_no_lectures.setVisibility(View.VISIBLE);
+
+                }
+                loadingView.stop();
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<List<Lecture>> call, @NonNull Throwable t) {
+                loadingView.stop();
+                Log.i("onFailure:", t.getMessage());
+            }
+        });
     }
     //    @Override
 //    public void onAttach(Context context) {

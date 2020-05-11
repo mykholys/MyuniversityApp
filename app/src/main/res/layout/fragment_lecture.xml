@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.LectureFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -12,4 +13,25 @@
         android:clipToPadding="false"
         android:padding="@dimen/_10sdp"
         android:scrollbarStyle="outsideOverlay" />
+    <TextView
+        android:id="@+id/LectureFragment_tv_no_lectures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_16ssp"
+        android:layout_gravity="center"
+        android:text="@string/there_are_no_lectures"
+        android:visibility="invisible"/>
+    <com.github.loadingview.LoadingView
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lv_duration="15"
+        app:lv_end_color="@color/color_end_btn"
+        app:lv_external_radius="28dp"
+        app:lv_internal_radius="6dp"
+        android:background="@color/dark_alpha_50"
+        app:lv_start_color="@color/color_start_btn"
+
+        />
+
 </FrameLayout>

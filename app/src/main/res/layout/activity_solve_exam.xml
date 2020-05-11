@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.SolveExamActivity">
 
     <ImageView
@@ -106,7 +107,11 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/SolveExamActivity_btn_Next"
         android:layout_below="@+id/SolveExamActivity_txt_time_per_question"
-        android:padding="@dimen/_10sdp">
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:paddingTop="@dimen/_15sdp"
+        android:paddingBottom="@dimen/_20sdp"
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -207,6 +212,7 @@
 
     </ScrollView>
 
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/SolveExamActivity_btn_Next"
         android:layout_width="match_parent"
@@ -219,4 +225,18 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/_16ssp" />
+
+    <com.github.loadingview.LoadingView
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        app:lv_duration="15"
+        app:lv_end_color="@color/color_end_btn"
+        app:lv_external_radius="28dp"
+        app:lv_internal_radius="6dp"
+        android:background="@color/dark_alpha_50"
+        app:lv_start_color="@color/color_start_btn"
+        />
 </RelativeLayout>

@@ -195,8 +195,8 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
 
 
         } else if (title.equals(getString(R.string.gender))) {
-            mdialogs.add(new Dialog(getString(R.string.male)));
-            mdialogs.add(new Dialog(getString(R.string.female)));
+            mdialogs.add(new Dialog(1,getString(R.string.male)));
+            mdialogs.add(new Dialog(2,getString(R.string.female)));
 
         } else if (title.equals(getString(R.string.academic_year))) {
             mdialogs.add(new Dialog("1"));

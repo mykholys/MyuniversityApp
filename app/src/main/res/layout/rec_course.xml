@@ -44,6 +44,7 @@
         android:fontFamily="@font/roboto"
         android:textColor="@color/white"
         android:layout_centerVertical="true"
+        android:textAlignment="viewStart"
         android:maxLines="2"
         android:text="php programming phpphpphpphpphpphpphpphp programmingphp phpphpphpphpphpphpphpphp programmingphp"
         android:textSize="@dimen/_12ssp" />
