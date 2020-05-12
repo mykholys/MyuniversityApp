@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1049674609175",
+    "firebase_url": "https://my-university-57824.firebaseio.com",
+    "project_id": "my-university-57824",
+    "storage_bucket": "my-university-57824.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049674609175:android:20890ad9b3dffef9596252",
+        "android_client_info": {
+          "package_name": "com.mykholy.myuniversity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1049674609175-6j1lhfcdm3ck0t35munmfsb3c5jgd069.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mykholy.myuniversity",
+            "certificate_hash": "8004a4c34d11f685aa58cdb5cda152e0ef68694d"
+          }
+        },
+        {
+          "client_id": "1049674609175-lgjeu3sriltm5hdpn6bi6u8k1nhs757e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtHP6HvLcTH1dfZ6vh8ziVky-rgouDqko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1049674609175-lgjeu3sriltm5hdpn6bi6u8k1nhs757e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

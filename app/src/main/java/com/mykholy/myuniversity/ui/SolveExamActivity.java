@@ -28,6 +28,7 @@ import com.mykholy.myuniversity.model.Exam;
 import com.mykholy.myuniversity.model.Question;
 import com.mykholy.myuniversity.ui.dialog.FinishExamDialogFragment;
 import com.mykholy.myuniversity.utilities.Constants;
+import com.mykholy.myuniversity.utilities.LanguageHelper;
 import com.pranavpandey.android.dynamic.toasts.DynamicToast;
 
 import java.util.Collections;
@@ -67,6 +68,8 @@ public class SolveExamActivity extends AppCompatActivity implements FinishExamDi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setFullScreen();
+        LanguageHelper.setLanguage(this, Constants.getSPreferences(this).getLanguage());
+
         setContentView(R.layout.activity_solve_exam);
         setUi();
         setApi();

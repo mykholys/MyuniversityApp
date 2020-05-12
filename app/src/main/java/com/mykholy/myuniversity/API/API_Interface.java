@@ -4,6 +4,7 @@ import com.mykholy.myuniversity.model.Course;
 import com.mykholy.myuniversity.model.Exam;
 import com.mykholy.myuniversity.model.Lecture;
 import com.mykholy.myuniversity.model.Login;
+import com.mykholy.myuniversity.model.Notification;
 import com.mykholy.myuniversity.model.Question;
 import com.mykholy.myuniversity.model.Student;
 
@@ -54,6 +55,13 @@ public interface API_Interface {
 
     @POST("api/studentSolveExam")
     Call<Exam> saveExam(@Header("Authorization") String header, @Body Exam exam);
+
+    @POST("api/student/token/{studentID}")
+    Call<Student> updateTokenStudent(@Header("Authorization") String header, @Path("studentID") int studentID, @Body Student student);
+
+
+    @GET("api/studentNotification/{AcademicYear}/notification/{DeptID}")
+    Call<List<Notification>> getAllNotifications(@Header("Authorization") String header, @Path("AcademicYear") int AcademicYear, @Path("DeptID") int DeptID);
 
 
 

@@ -1,12 +1,17 @@
 package com.mykholy.myuniversity.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,18 +22,29 @@ import android.widget.Toast;
 
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.infideap.drawerbehavior.Advance3DDrawerLayout;
+import com.mykholy.myuniversity.API.API_Interface;
+import com.mykholy.myuniversity.API.AppClient;
 import com.mykholy.myuniversity.R;
 import com.mykholy.myuniversity.model.Course;
 import com.mykholy.myuniversity.model.Dialog;
+import com.mykholy.myuniversity.model.Notification;
+import com.mykholy.myuniversity.model.Student;
+import com.mykholy.myuniversity.ui.dialog.DialogDeveloperFragment;
 import com.mykholy.myuniversity.ui.dialog.DialogFragment;
 import com.mykholy.myuniversity.utilities.Constants;
 import com.mykholy.myuniversity.utilities.LanguageHelper;
+import com.mykholy.myuniversity.utilities.NotificationHelper;
+import com.pranavpandey.android.dynamic.toasts.DynamicToast;
 
 
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, DialogFragment.OnFragmentInteractionListener, CourseFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, DialogFragment.OnFragmentInteractionListener, CourseFragment.OnFragmentInteractionListener, NotificationFragment.OnFragmentInteractionListener {
     private MeowBottomNavigation meo;
     public static final int ID_NOTIFICATION = 1;
     public static final int ID_COURSE = 2;
@@ -38,15 +54,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Toolbar toolbar;
 
     NavigationView nav_view_notification;
+    private API_Interface api_interface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setFullScreen();
+        LanguageHelper.setLanguage(this, Constants.getSPreferences(this).getLanguage());
         setContentView(R.layout.nav_drawer);
 
 
         setUi();
+        setApi();
         setListener();
 
         meo.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
@@ -57,13 +76,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 switch (item.getId()) {
                     case ID_NOTIFICATION:
                         select_fragment = new NotificationFragment();
+                        meo.clearCount(ID_NOTIFICATION);
                         break;
                     case ID_COURSE:
                         select_fragment = new CourseFragment();
                         break;
                     case ID_PERSON:
                         select_fragment = new ProfileFragment();
-                        meo.clearCount(ID_NOTIFICATION);
                         break;
 
                 }
@@ -88,10 +107,57 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-
-        meo.setCount(ID_NOTIFICATION, "115");
+Log.i("NotificationCount_main:", String.valueOf(Constants.getSPreferences(this).getNotificationCount()));
+        if (Constants.getSPreferences(this).getNotificationCount() != 0)
+            meo.setCount(ID_NOTIFICATION, String.valueOf(Constants.getSPreferences(this).getNotificationCount()));
 
         meo.show(ID_COURSE, false);
+
+
+        FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+            @Override
+            public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                if (task.isSuccessful()) {
+                    Log.i("fcm_token:", task.getResult().getToken());
+                    saveToken(task.getResult().getToken());
+                } else {
+                    Log.i("fcm_token:", task.getException().getMessage());
+
+                }
+            }
+        });
+
+    }
+
+    private void saveToken(String Fcm_Token) {
+        String token = Constants.getSPreferences(this).getType_Token() + " " + Constants.getSPreferences(this).getToken();
+
+        Call<Student> call = api_interface.updateTokenStudent(token, Constants.getSPreferences(this).getSTUDENT_ID(), new Student(Fcm_Token, "put"));
+        call.enqueue(new Callback<Student>() {
+            @Override
+            public void onResponse(@NonNull Call<Student> call, @NonNull Response<Student> response) {
+                if (response.isSuccessful()) {
+                    Log.i("fcm_token", "token saved");
+                }
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Student> call, @NonNull Throwable t) {
+                Log.i("onFailure:", t.getMessage());
+            }
+        });
+
+        FirebaseMessaging.getInstance().subscribeToTopic("all").addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful())
+                    Log.d("subscribeToTopic", "done");
+                else
+                    Log.d("subscribeToTopic", "not done");
+
+            }
+        });
 
     }
 
@@ -110,6 +176,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else
             setLTR();
 
+    }
+
+    private void setApi() {
+
+        api_interface = AppClient.getClient().create(API_Interface.class);
     }
 
     private void setUiDrawLayout() {
@@ -195,17 +266,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.menu_table:
                 Toast.makeText(MainActivity.this, "menu_table Clicked", Toast.LENGTH_LONG).show();
                 drawerLayout.closeDrawers();
+                NotificationHelper.displayNotification(getApplicationContext(), "Tile menu_table", "body menu_table");
                 break;
             case R.id.menu_location:
                 Toast.makeText(MainActivity.this, "menu_location Clicked", Toast.LENGTH_LONG).show();
                 drawerLayout.closeDrawers();
+                String uri = "http://maps.google.com/maps?daddr=" + 30.575632 + "," + 31.008551 + " (" + "Menoufia University - FCI" + ")";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                intent.setPackage("com.google.android.apps.maps");
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    DynamicToast.makeWarning(this, "Google map app not installed").show();
+
+                }
+
+
                 break;
             case R.id.menu_contact_us:
                 Toast.makeText(MainActivity.this, "menu_contact_us Clicked", Toast.LENGTH_LONG).show();
                 drawerLayout.closeDrawers();
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("message/rfc822");
+                i.putExtra(Intent.EXTRA_EMAIL, new String[]{"mykholys30@gmail.com"});
+                i.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.subject_email));
+                i.putExtra(Intent.EXTRA_TEXT, getString(R.string.my_name) + Constants.getSPreferences(this).getSTUDENT_NAME() + "\n" + getString(R.string.academic_year) + ": " + Constants.getSPreferences(this).getSTUDENT_ACADEMIC_YEAR() + "\n" + getString(R.string.department) + ": " + Constants.getSPreferences(this).getSTUDENT_DEPT_NAME() + "\n" + getString(R.string.email) + ": " + Constants.getSPreferences(this).getUserName() + "\n\n" + getString(R.string.my_problem));
+                try {
+                    startActivity(Intent.createChooser(i, "Send mail..."));
+                } catch (android.content.ActivityNotFoundException ex) {
+                    Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.menu_developers:
-                Toast.makeText(MainActivity.this, "menu_developers Clicked", Toast.LENGTH_LONG).show();
+                DialogDeveloperFragment dialogDeveloperFragment = new DialogDeveloperFragment();
+                dialogDeveloperFragment.show(getSupportFragmentManager(), null);
                 drawerLayout.closeDrawers();
                 break;
             case R.id.menu_settings:
@@ -239,7 +333,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onFragmentInteraction(Course course) {
         Intent DetailsCourseIntent = new Intent(this, DetailsCourseActivity.class);
-        DetailsCourseIntent.putExtra("course",  course);
+        DetailsCourseIntent.putExtra("course", course);
+        startActivity(DetailsCourseIntent);
+    }
+
+    @Override
+    public void onFragmentInteraction(Notification notification) {
+        Intent DetailsCourseIntent = new Intent(this, DetailsCourseActivity.class);
+        Course course = new Course(notification.getCId(), notification.getCName(), notification.getCImage(), notification.getAcademicYear(), notification.getTerm(), notification.getDId(), notification.getDeptID());
+        DetailsCourseIntent.putExtra("course", course);
         startActivity(DetailsCourseIntent);
     }
 }

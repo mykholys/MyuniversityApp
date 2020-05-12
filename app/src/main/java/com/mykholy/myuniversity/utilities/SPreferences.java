@@ -11,6 +11,7 @@ public class SPreferences {
     protected final String USERNAME = "userName";
     protected final String PHONE = "phone";
     protected final String LANGUAGE = "language";
+    protected final String NOTIFICATION_COUNT = "notification_count";
 
     //student
     private final String STUDENT_ID = "student_id";
@@ -153,6 +154,17 @@ public class SPreferences {
     public String getLanguage() {
         return sp.getString(LANGUAGE, "en");
     }
+    //-----------------
+
+    //------notification------
+    public void setNotificationCount(int notificationCount) {
+        sp.edit().putInt(NOTIFICATION_COUNT, notificationCount).apply();
+    }
+
+    public int getNotificationCount() {
+        return sp.getInt(NOTIFICATION_COUNT, 0);
+    }
+
     //-----------------
     public void setClearAll() {
         sp.edit().clear().apply();

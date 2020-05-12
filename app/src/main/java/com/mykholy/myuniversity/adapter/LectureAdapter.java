@@ -10,12 +10,14 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.mykholy.myuniversity.API.AppClient;
 import com.mykholy.myuniversity.MyInterface.OnRecyclerViewCourse;
 import com.mykholy.myuniversity.MyInterface.OnRecyclerViewLecture;
 import com.mykholy.myuniversity.R;
 import com.mykholy.myuniversity.model.Course;
 import com.mykholy.myuniversity.model.Lecture;
 
+import java.io.File;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -52,7 +54,10 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.MyViewHo
             }
         });
 
-
+        if (checkIsFileExist(AppClient.BASE_URL+"public/images/Lecture/"+data.get(position).getFile()))
+            holder.rec_lecture_iv_download.setVisibility(View.INVISIBLE);
+        else
+            holder.rec_lecture_iv_download.setVisibility(View.VISIBLE);
 
 
     }
@@ -74,5 +79,11 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.MyViewHo
             rec_lecture_tv_lec_name = itemView.findViewById(R.id.rec_lecture_tv_lec_name);
 
         }
+    }
+
+    private boolean checkIsFileExist(String... sUrl) {
+        String[] fileName = sUrl[0].split("/");
+        File myfile = new File(context.getExternalFilesDir("Download"), fileName[fileName.length - 1]);
+        return myfile.exists();
     }
 }

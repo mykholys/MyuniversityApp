@@ -1,25 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff00ff"
     tools:context=".ui.NotificationFragment">
 
-    <ImageView
-        android:id="@+id/CourseFragment_iv_menu"
-        android:layout_width="@dimen/_18sdp"
-        android:layout_height="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:src="@drawable/ic_menu"
-        tools:ignore="ContentDescription" />
+    <RelativeLayout
+        android:id="@+id/NotificationFragment_ly_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/NotificationFragment_iv_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/custom_bg_toolbar"
+
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/notifications"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="@dimen/_16ssp" />
+
+        <ImageView
+            android:id="@+id/NotificationFragment_iv_menu"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:src="@drawable/ic_menu"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/NotificationFragment_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="@dimen/_16ssp"
-        android:text="Notification fragment" />
+        android:layout_below="@+id/NotificationFragment_ly_toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_60sdp"
+        android:scrollbarStyle="outsideOverlay" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/NotificationFragment_tv_no_notifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/there_are_no_notifications"
+        android:textSize="@dimen/_16ssp"
+        android:visibility="invisible" />
+
+    <com.github.loadingview.LoadingView
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/dark_alpha_50"
+        app:lv_duration="15"
+        app:lv_end_color="@color/color_end_btn"
+        app:lv_external_radius="28dp"
+        app:lv_internal_radius="6dp"
+        app:lv_start_color="@color/color_start_btn" />
+
+</RelativeLayout>

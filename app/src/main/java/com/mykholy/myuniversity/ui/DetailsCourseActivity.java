@@ -6,17 +6,30 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.PowerManager;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 
 import com.github.loadingview.LoadingView;
@@ -27,18 +40,27 @@ import com.mykholy.myuniversity.R;
 import com.mykholy.myuniversity.adapter.MyPagerAdapter;
 import com.mykholy.myuniversity.model.Course;
 import com.mykholy.myuniversity.model.Exam;
+import com.mykholy.myuniversity.model.Lecture;
 import com.mykholy.myuniversity.model.MyTab;
 import com.mykholy.myuniversity.model.Question;
 import com.mykholy.myuniversity.ui.dialog.SortDialogFragment;
 import com.mykholy.myuniversity.utilities.Constants;
+import com.mykholy.myuniversity.utilities.LanguageHelper;
 import com.pranavpandey.android.dynamic.toasts.DynamicToast;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.Serializable;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class DetailsCourseActivity extends AppCompatActivity implements SortDialogFragment.OnFragmentInteractionListener, ExamFragment.OnFragmentInteractionListener {
+public class DetailsCourseActivity extends AppCompatActivity implements SortDialogFragment.OnFragmentInteractionListener, ExamFragment.OnFragmentInteractionListener, LectureFragment.OnFragmentInteractionListener {
     private Toolbar DetailsCourseActivity_toolbar;
     private TabLayout DetailsCourseActivity_tab_layout;
     private ViewPager main_pager;
@@ -48,16 +70,24 @@ public class DetailsCourseActivity extends AppCompatActivity implements SortDial
     private API_Interface api_interface;
     private List<Question> questions;
     private LoadingView loadingView;
-
+    public static final int WRITE_EX_REQ_CODE = 1;
+    ProgressDialog progressDialog;
+    Lecture lecture;
+    private String urlLecFile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setFullScreen();
+        LanguageHelper.setLanguage(this, Constants.getSPreferences(this).getLanguage());
         setContentView(R.layout.activity_details_course);
         setUi();
         setApi();
         setToolbar();
+
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
+        builder.detectFileUriExposure();
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -192,4 +222,210 @@ public class DetailsCourseActivity extends AppCompatActivity implements SortDial
             refreshAdapter("solved");
     }
 
+    @Override
+    public void onFragmentInteraction(Lecture lecture) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+        } else {
+            this.lecture = lecture;
+            urlLecFile = AppClient.BASE_URL + "public/images/Lecture/" + lecture.getFile();
+            Log.i("url:", urlLecFile);
+            if (!checkIsFileExist(urlLecFile))
+                ben_downloadsFile();
+            else {
+
+                openFileFromApp(urlLecFile);
+            }
+
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == WRITE_EX_REQ_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                DynamicToast.makeSuccess(this, "Permission generated").show();
+                if (!checkIsFileExist(urlLecFile))
+                    ben_downloadsFile();
+                else {
+
+                    openFileFromApp(urlLecFile);
+                }
+
+            }
+        }
+
+    }
+
+    private void ben_downloadsFile() {
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("file  download");
+        progressDialog.setMessage("file is start download");
+        progressDialog.setIndeterminate(true);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progressDialog.setCancelable(false);
+        Toast.makeText(this, "isExternalStorageReadable:" + isExternalStorageReadable(), Toast.LENGTH_LONG).show();
+        MyDownloadTask myDownloadTask = new MyDownloadTask(this);
+        myDownloadTask.execute(urlLecFile);
+
+    }
+
+    private boolean checkIsFileExist(String... sUrl) {
+        String[] fileName = sUrl[0].split("/");
+        Log.i("url_file", fileName[fileName.length - 1]);
+        File myfile = new File(getExternalFilesDir("Download"), fileName[fileName.length - 1]);
+        return myfile.exists();
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    private class MyDownloadTask extends AsyncTask<String, Integer, String> {
+        private Context context;
+        private PowerManager.WakeLock wakeLock;
+        String path;
+
+
+        public MyDownloadTask(Context context) {
+            this.context = context;
+
+        }
+
+        @Override
+        protected String doInBackground(String... sUrl) {
+            InputStream in = null;
+            OutputStream out = null;
+            HttpURLConnection connection = null;
+            try {
+                URL url = new URL(sUrl[0]);
+                connection = (HttpURLConnection) url.openConnection();
+                connection.connect();
+
+                if (connection.getResponseCode() != HttpURLConnection.HTTP_OK)
+                    return "Server return http " + connection.getResponseCode() + " --" + connection.getResponseMessage();
+
+                int fileLength = connection.getContentLength();
+
+                String[] file = sUrl[0].split("/");
+
+                in = connection.getInputStream();
+                String DirName = "MyAppName";
+                File dir = new File(Environment.getExternalStorageDirectory(), DirName);
+                File dir2 = new File(getExternalFilesDir(null), "Download");
+                if (!dir2.exists()) {
+                    dir2.mkdirs();
+                }
+
+                /*
+                ****
+                for more detials go to
+
+                https://stackoverflow.com/questions/51565897/saving-files-in-android-for-beginners-internal-external-storage
+                *****
+                */
+                //file in internal Storage
+                File myfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), "myfile_" + file[file.length - 1]);
+
+                //file in Custom Folder in internal Storage
+                File myfileinfolder = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + DirName + "/", "myfileinfolder_" + file[file.length - 1]);
+                //Toast.makeText(context, "myfileinfolder:" + myfileinfolder.getAbsolutePath().toString(), Toast.LENGTH_LONG).show();
+
+                //file in package name
+                File myfile2 = new File(getExternalFilesDir(null), "myfile2_" + file[file.length - 1]);
+
+                File myfile3 = new File(getExternalFilesDir("Download"), file[file.length - 1]);
+                Log.i("download:", file[file.length - 1]);
+                Log.i("download:", String.valueOf(file.length));
+                Log.i("download:", file[0]);
+
+                out = new FileOutputStream(myfile3);
+                byte[] data = new byte[4096];
+
+                long total = 0;
+                int count;
+                while ((count = in.read(data)) != -1) {
+
+
+                    if (isCancelled()) {
+                        in.close();
+                        return null;
+                    }
+                    total += count;
+
+                    if (fileLength > 0) {
+                        publishProgress((int) (total * 100 / fileLength));
+
+                    }
+                    out.write(data, 0, count);
+
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (out != null) out.close();
+                    if (in != null) in.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+                if (connection != null) connection.disconnect();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, getClass().getName());
+            wakeLock.acquire(10*60*1000L /*10 minutes*/);
+
+            progressDialog.show();
+            path = Environment.getExternalStorageDirectory().getAbsolutePath();
+            Toast.makeText(context, "path:" + path, Toast.LENGTH_LONG).show();
+
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+            progressDialog.setIndeterminate(false);
+            progressDialog.setMax(100);
+            progressDialog.setProgress(values[0]);
+
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            progressDialog.dismiss();
+            wakeLock.release();
+            Toast.makeText(context, "Downloaded", Toast.LENGTH_LONG).show();
+
+        }
+    }
+
+    public boolean isExternalStorageReadable() {
+        String state = Environment.getExternalStorageState();
+        return Environment.MEDIA_MOUNTED.equals(state) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state);
+    }
+
+    private void openFileFromApp(String... sUrl) {
+        String[] fileName = sUrl[0].split("/");
+        File myfile = new File(getExternalFilesDir("Download"), fileName[fileName.length - 1]);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        intent.setDataAndType(Uri.fromFile(myfile), "application/vnd.ms-powerpoint");
+
+        try {
+            startActivity(intent);
+        } catch (Exception e) {
+            Log.i("NoApp", e.getMessage());
+        }
+
+
+    }
 }

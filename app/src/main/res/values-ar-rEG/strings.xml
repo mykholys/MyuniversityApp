@@ -129,8 +129,14 @@
     <string name="there_are_no_lectures">لا يوجد محاضرات</string>
     <string name="there_are_no_courses">لا يوجد كورسات</string>
     <string name="there_are_no_exams">لا يوجد امتحانات</string>
+    <string name="there_are_no_notifications">لا يوجد اشعارات</string>
     <string name="start_time_exam">وقت بدء الامتحان هو</string>
     <string name="can_not_enter_exam_before_time">لا يمكنك دخول الامتحان قبل  الوقت الذي يبدأ فيه</string>
     <string name="exam_expired">"لا يمكنك دخول الامتحان ، لقد انتهى وقت الامتحان "</string>
+    <string name="my_name">"اسمي هو "</string>
+    <string name="my_problem">مشكلتي هي ...</string>
+    <string name="subject_email">جامعة المنوفية - الطالب</string>
+    <string name="name_ahmed_salah_el_kholy">أحمد صلاح الخولي</string>
+    <string name="notifications">الاشعارات</string>
 
 </resources>

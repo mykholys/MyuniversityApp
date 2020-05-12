@@ -49,9 +49,17 @@ public class Student {
     @SerializedName("Dept_Name")
     @Expose
     private String deptName;
+    @SerializedName("token")
+    @Expose
+    private String token;
     @SerializedName("_method")
     @Expose
     private String _method;
+
+    public Student(String token, String _method) {
+        this.token = token;
+        this._method = _method;
+    }
 
     public Student(String sFullName, String email, String password, String nIdN, String phone, String birthdate, String gender, String state, Integer academicYear, Integer deptID) {
         this.sFullName = sFullName;
@@ -214,5 +222,13 @@ public class Student {
 
     public void setCurrent_password(String current_password) {
         this.current_password = current_password;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

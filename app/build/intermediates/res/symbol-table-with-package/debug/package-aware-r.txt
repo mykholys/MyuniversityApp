@@ -161,6 +161,7 @@ attr buttonCompat
 attr buttonGravity
 attr buttonIconDimen
 attr buttonPanelSideLayout
+attr buttonSize
 attr buttonStyle
 attr buttonStyleSmall
 attr buttonTint
@@ -202,6 +203,7 @@ attr chipStrokeColor
 attr chipStrokeWidth
 attr chipStyle
 attr chipSurfaceColor
+attr circleCrop
 attr closeIcon
 attr closeIconEnabled
 attr closeIconEndPadding
@@ -232,6 +234,7 @@ attr colorPrimary
 attr colorPrimaryDark
 attr colorPrimarySurface
 attr colorPrimaryVariant
+attr colorScheme
 attr colorSecondary
 attr colorSecondaryVariant
 attr colorSurface
@@ -389,6 +392,8 @@ attr iconStartPadding
 attr iconTint
 attr iconTintMode
 attr iconifiedByDefault
+attr imageAspectRatio
+attr imageAspectRatioAdjust
 attr imageButtonStyle
 attr indeterminateProgressStyle
 attr initialActivityCount
@@ -605,6 +610,7 @@ attr ratingBarStyleSmall
 attr recyclerViewStyle
 attr reverseLayout
 attr rippleColor
+attr scopeUris
 attr scrimAnimationDuration
 attr scrimBackground
 attr scrimVisibleHeightTrigger
@@ -851,6 +857,17 @@ color color_pending
 color color_start
 color color_start_btn
 color color_start_toolbar
+color common_google_signin_btn_text_dark
+color common_google_signin_btn_text_dark_default
+color common_google_signin_btn_text_dark_disabled
+color common_google_signin_btn_text_dark_focused
+color common_google_signin_btn_text_dark_pressed
+color common_google_signin_btn_text_light
+color common_google_signin_btn_text_light_default
+color common_google_signin_btn_text_light_disabled
+color common_google_signin_btn_text_light_focused
+color common_google_signin_btn_text_light_pressed
+color common_google_signin_btn_tint
 color dark_alpha_50
 color dark_gray
 color design_bottom_navigation_shadow_color
@@ -2231,6 +2248,25 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable common_full_open_on_phone
+drawable common_google_signin_btn_icon_dark
+drawable common_google_signin_btn_icon_dark_focused
+drawable common_google_signin_btn_icon_dark_normal
+drawable common_google_signin_btn_icon_dark_normal_background
+drawable common_google_signin_btn_icon_disabled
+drawable common_google_signin_btn_icon_light
+drawable common_google_signin_btn_icon_light_focused
+drawable common_google_signin_btn_icon_light_normal
+drawable common_google_signin_btn_icon_light_normal_background
+drawable common_google_signin_btn_text_dark
+drawable common_google_signin_btn_text_dark_focused
+drawable common_google_signin_btn_text_dark_normal
+drawable common_google_signin_btn_text_dark_normal_background
+drawable common_google_signin_btn_text_disabled
+drawable common_google_signin_btn_text_light
+drawable common_google_signin_btn_text_light_focused
+drawable common_google_signin_btn_text_light_normal
+drawable common_google_signin_btn_text_light_normal_background
 drawable custom_bg_btn
 drawable custom_bg_dialog
 drawable custom_bg_draw_layout_ltr
@@ -2249,9 +2285,12 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable forgot_dialog_iv
+drawable googleg_disabled_color_18
+drawable googleg_standard_color_18
 drawable ic_about_us
 drawable ic_arrow_back_black
 drawable ic_arrow_drop_down
+drawable ic_call
 drawable ic_check
 drawable ic_circle
 drawable ic_circle_sort
@@ -2259,6 +2298,7 @@ drawable ic_contact_us
 drawable ic_course
 drawable ic_date
 drawable ic_download
+drawable ic_facebook
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_lec
@@ -2270,6 +2310,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_notification
+drawable ic_notifications
 drawable ic_person
 drawable ic_settings
 drawable ic_sort
@@ -2342,6 +2383,9 @@ id CourseFragment_tv_name
 id CourseFragment_tv_no_lectures
 id DetailsCourseActivity_tab_layout
 id DetailsCourseActivity_toolbar
+id DialogDeveloperFragment_tv_facebook
+id DialogDeveloperFragment_tv_phone
+id DialogDeveloperFragment_tv_title
 id DialogFragment_rv
 id DialogFragment_tv_sub_title
 id DialogFragment_tv_title
@@ -2363,6 +2407,11 @@ id ForgotPassword_tv_sub_title
 id LectureFragment_rv
 id LectureFragment_tv_no_lectures
 id META
+id NotificationFragment_iv_menu
+id NotificationFragment_iv_toolbar
+id NotificationFragment_ly_toolbar
+id NotificationFragment_rv
+id NotificationFragment_tv_no_notifications
 id ProfileFragment_btn_update
 id ProfileFragment_et_confirm_new_password
 id ProfileFragment_et_current_password
@@ -2467,6 +2516,8 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id adjust_height
+id adjust_width
 id adt_hint
 id adt_hint_icon
 id adt_hint_text
@@ -2509,6 +2560,7 @@ id coordinator
 id custom
 id customPanel
 id cut
+id dark
 id date_picker_actions
 id decor_content_parent
 id default_activity_button
@@ -2558,6 +2610,7 @@ id home
 id homeAsUp
 id icon
 id icon_group
+id icon_only
 id ifRoom
 id image
 id info
@@ -2568,6 +2621,8 @@ id iv
 id labeled
 id largeLabel
 id left
+id light
+id line
 id line1
 id line3
 id listMode
@@ -2678,6 +2733,11 @@ id rec_lecture_iv
 id rec_lecture_iv_download
 id rec_lecture_ly
 id rec_lecture_tv_lec_name
+id rec_notification_ly
+id rec_notification_tv_body
+id rec_notification_tv_course_name
+id rec_notification_tv_date
+id rec_notification_tv_title
 id right
 id right_icon
 id right_side
@@ -2778,6 +2838,7 @@ id useLogo
 id v_circle
 id view_offset_helper
 id visible
+id wide
 id withText
 id withinBounds
 id wrap
@@ -2791,6 +2852,7 @@ integer cancel_button_image_alpha
 integer config_tooltipAnimTime
 integer design_snackbar_text_max_lines
 integer design_tab_indicator_anim_duration_ms
+integer google_play_services_version
 integer hide_password_duration
 integer mtrl_badge_max_character_count
 integer mtrl_btn_anim_delay_ms
@@ -2874,6 +2936,7 @@ layout design_text_input_start_icon
 layout dp_example
 layout fragment_course
 layout fragment_dialog
+layout fragment_dialog_developer
 layout fragment_exam
 layout fragment_finish_exam_dialog
 layout fragment_forgot_password_dialog
@@ -2933,6 +2996,7 @@ layout rec_dialog
 layout rec_exam_solve
 layout rec_exam_unsolve
 layout rec_lecture
+layout rec_notification
 layout sdp_example
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
@@ -2958,6 +3022,7 @@ mipmap ic_logo
 plurals mtrl_badge_content_description
 string Exams
 string Lectures
+string _201064754874
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -3022,6 +3087,24 @@ string choose_state
 string clear_text_end_icon_content_description
 string closeDrawer
 string code_has_been_sent_to_reset_a_new_password
+string common_google_play_services_enable_button
+string common_google_play_services_enable_text
+string common_google_play_services_enable_title
+string common_google_play_services_install_button
+string common_google_play_services_install_text
+string common_google_play_services_install_title
+string common_google_play_services_notification_channel_name
+string common_google_play_services_notification_ticker
+string common_google_play_services_unknown_issue
+string common_google_play_services_unsupported_text
+string common_google_play_services_update_button
+string common_google_play_services_update_text
+string common_google_play_services_update_title
+string common_google_play_services_updating_text
+string common_google_play_services_wear_update_text
+string common_open_on_phone
+string common_signin_button_text
+string common_signin_button_text_long
 string confirm_new_password
 string congrats
 string contact_us
@@ -3030,6 +3113,7 @@ string current_password
 string current_password_incorrect
 string dakahlia
 string damietta
+string default_web_client_id
 string department
 string department_required
 string don_t_have_an_account
@@ -3045,20 +3129,28 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string faiyum
+string fcm_fallback_notification_channel_label
 string female
 string finished
+string firebase_database_url
 string forget_password
 string forgot_password
 string forgot_password_sub_title
 string full_name
 string full_name_required
 string fullname_short
+string gcm_defaultSenderId
 string gender
 string gender_required
 string gharbia
 string giza
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
+string https_m_me_3syer
 string icon_content_description
 string info_updated
 string ismailia
@@ -3108,6 +3200,9 @@ string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string mtrl_slider_range_content_description
+string my_name
+string my_problem
+string name_ahmed_salah_el_kholy
 string national_id
 string national_id_14_number
 string national_id_required
@@ -3118,6 +3213,7 @@ string new_valley
 string next
 string no_internet
 string north_sina
+string notifications
 string openDrawer
 string password
 string password_confirmation_required
@@ -3139,6 +3235,7 @@ string phone_not_valid
 string phone_required
 string please_complete_exam
 string port_said
+string project_id
 string qalyubia
 string qena
 string question
@@ -3158,12 +3255,14 @@ string start_time_exam
 string state
 string state_required
 string status_bar_notification_info_overflow
+string subject_email
 string submit
 string suez
 string table
 string there_are_no_courses
 string there_are_no_exams
 string there_are_no_lectures
+string there_are_no_notifications
 string time_per_question
 string time_taken
 string title
@@ -3925,6 +4024,7 @@ styleable LinearConstraintLayout android_orientation
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
+styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
 styleable LoadingView lv_duration lv_end_color lv_external_radius lv_internal_radius lv_start_color
 styleable MaterialAlertDialog backgroundInsetBottom backgroundInsetEnd backgroundInsetStart backgroundInsetTop
 styleable MaterialAlertDialogTheme materialAlertDialogBodyTextStyle materialAlertDialogTheme materialAlertDialogTitleIconStyle materialAlertDialogTitlePanelStyle materialAlertDialogTitleTextStyle
@@ -3953,6 +4053,7 @@ styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable ShapeAppearance cornerFamily cornerFamilyBottomLeft cornerFamilyBottomRight cornerFamilyTopLeft cornerFamilyTopRight cornerSize cornerSizeBottomLeft cornerSizeBottomRight cornerSizeTopLeft cornerSizeTopRight
 styleable ShapeableImageView strokeColor strokeWidth
+styleable SignInButton buttonSize colorScheme scopeUris
 styleable Slider android_value android_stepSize android_valueFrom android_valueTo haloColor haloRadius labelBehavior labelStyle thumbColor thumbElevation thumbRadius tickColor tickColorActive tickColorInactive trackColor trackColorActive trackColorInactive trackHeight
 styleable Snackbar snackbarButtonStyle snackbarStyle snackbarTextViewStyle
 styleable SnackbarLayout android_maxWidth actionTextColorAlpha animationMode backgroundOverlayColorAlpha backgroundTint backgroundTintMode elevation maxActionInlineWidth

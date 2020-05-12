@@ -26,7 +26,6 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setFullScreen();
-
         LanguageHelper.setLanguage(this, Constants.getSPreferences(this).getLanguage());
         setContentView(R.layout.activity_splash_screen);
         setUi();
