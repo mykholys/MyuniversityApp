@@ -21,6 +21,8 @@ public class App extends Application {
 
             NotificationChannel channel1 = new NotificationChannel(CHANNEL_1_ID,"Channel 1", NotificationManager.IMPORTANCE_HIGH);
             channel1.setDescription("This is channel 1");
+            channel1.setShowBadge(true);
+
 
 
 

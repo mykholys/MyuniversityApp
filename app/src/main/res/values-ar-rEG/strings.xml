@@ -47,7 +47,6 @@
     <string name="qalyubia">القليوبية</string>
     <string name="qena">قنا</string>
     <string name="red_sea">البحر الاحمر</string>
-    <string name="register">تسجيل</string>
     <string name="sharqia">الشرقية</string>
     <string name="sing_in">تسجيل الدخول</string>
     <string name="sohag">سوهاج</string>
@@ -59,7 +58,6 @@
     <string name="choose_department">اختر القسم …</string>
     <string name="academic_year_required">السنة الأكاديمية مطلوبه</string>
     <string name="academy_year_chosen">يجب اختيار السنة الدراسية أولاً</string>
-    <string name="birthdate_not_valid">تاريخ الميلاد غير صالح</string>
     <string name="birthdate_required">تاريخ الميلاد مطلوب</string>
     <string name="code_has_been_sent_to_reset_a_new_password">تم إرسال الرمز لإعادة تعيين كلمة سر جديدة</string>
     <string name="confirm_new_password">تأكيد كلمة السر الجديدة</string>
@@ -86,8 +84,6 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="openDrawer">open_drawer</string>
-    <string name="closeDrawer">close_drawer</string>
     <string name="about_developers">مطور التطبيق</string>
     <string name="contact_us">اتصل بنا</string>
     <string name="location">موقعنا</string>
@@ -127,16 +123,17 @@
     <string name="info_updated">تم تحديث بياناتك بنجاح</string>
     <string name="current_password_incorrect">"كلمة المرور الحالية غير صحيحة "</string>
     <string name="there_are_no_lectures">لا يوجد محاضرات</string>
-    <string name="there_are_no_courses">لا يوجد كورسات</string>
     <string name="there_are_no_exams">لا يوجد امتحانات</string>
     <string name="there_are_no_notifications">لا يوجد اشعارات</string>
     <string name="start_time_exam">وقت بدء الامتحان هو</string>
     <string name="can_not_enter_exam_before_time">لا يمكنك دخول الامتحان قبل  الوقت الذي يبدأ فيه</string>
     <string name="exam_expired">"لا يمكنك دخول الامتحان ، لقد انتهى وقت الامتحان "</string>
-    <string name="my_name">"اسمي هو "</string>
-    <string name="my_problem">مشكلتي هي ...</string>
+    <string name="my_name">"اسمي هو  "</string>
+    <string name="my_problem">مشكلتي هي …</string>
     <string name="subject_email">جامعة المنوفية - الطالب</string>
     <string name="name_ahmed_salah_el_kholy">أحمد صلاح الخولي</string>
     <string name="notifications">الاشعارات</string>
+    <string name="download_file">تحميل الملف</string>
+    <string name="downloading_file">جاري تحميل الملف …</string>
 
 </resources>

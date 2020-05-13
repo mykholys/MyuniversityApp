@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.util.Log;
 
 import com.mykholy.myuniversity.R;
@@ -28,10 +29,10 @@ public class NotificationHelper {
 
 
         Intent mainActivity = new Intent(context, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, mainActivity, 0);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, mainActivity, PendingIntent.FLAG_UPDATE_CURRENT);
 
         Notification notification = new NotificationCompat.Builder(context, CHANNEL_1_ID)
-                .setSmallIcon(R.drawable.logo_iv)
+                .setSmallIcon(R.drawable.ic_log_iv)
                 .setContentTitle(title)
                 .setContentText(body)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -40,7 +41,9 @@ public class NotificationHelper {
                 .setColor(Color.parseColor("#FF5722"))
                 .setAutoCancel(true)
                 .setDefaults(Notification.DEFAULT_SOUND)
+                .setVibrate(new long[0])
                 .build();
+
         NotificationManagerCompat notificationManagerCompat2 = NotificationManagerCompat.from(context);
 
         notificationManagerCompat2.notify(id++, notification);

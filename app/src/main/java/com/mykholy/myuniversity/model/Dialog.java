@@ -1,6 +1,8 @@
 package com.mykholy.myuniversity.model;
 
-public class Dialog {
+import java.io.Serializable;
+
+public class Dialog implements Serializable {
     private int id;
 
     private String name;

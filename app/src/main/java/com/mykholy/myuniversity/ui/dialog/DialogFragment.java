@@ -13,6 +13,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,12 +25,16 @@ import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mykholy.myuniversity.API.API_Interface;
+import com.mykholy.myuniversity.API.AppClient;
 import com.mykholy.myuniversity.MyInterface.OnItemClickListener;
 import com.mykholy.myuniversity.R;
 import com.mykholy.myuniversity.adapter.DialogAdapter;
+import com.mykholy.myuniversity.model.Department;
 import com.mykholy.myuniversity.model.Dialog;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -41,20 +48,22 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
 
     private static final String ARG_TITLE = "title";
     private static final String ARG_SUB_TITLE = "sub_title";
-    private static final String ARG_AcademicYear = "academic_year";
+    private static final String ARG_DialogDepartment = "department";
 
 
     // TODO: Rename and change types of parameters
     private String title;
     private String subTitle;
-    private int academic_year;
+    private ArrayList<Dialog> dialogDepartment;
 
 
     private TextView tvTitle;
     private TextView tvSubTitle;
     private RecyclerView rv;
     private DialogAdapter adapter;
+    private API_Interface api_interface;
 
+    ArrayList<Dialog> DialogDepartment = new ArrayList<>();
     private OnFragmentInteractionListener mListener;
 
     public DialogFragment() {
@@ -72,12 +81,12 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
         return fragment;
     }
 
-    public static DialogFragment newInstance(String title, String sub_title, int academic_year) {
+    public static DialogFragment newInstance(String title, String sub_title, ArrayList<Dialog> DialogDepartment) {
         DialogFragment fragment = new DialogFragment();
         Bundle args = new Bundle();
         args.putString(ARG_TITLE, title);
         args.putString(ARG_SUB_TITLE, sub_title);
-        args.putInt(ARG_AcademicYear, academic_year);
+        args.putSerializable(ARG_DialogDepartment, DialogDepartment);
 
         fragment.setArguments(args);
         return fragment;
@@ -91,9 +100,10 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
             subTitle = getArguments().getString(ARG_SUB_TITLE);
 
 
-            if (getArguments().getInt(ARG_AcademicYear) != 0) {
-                academic_year = getArguments().getInt(ARG_AcademicYear);
-                Log.i(ARG_AcademicYear, String.valueOf(academic_year));
+            if (getArguments().getSerializable(ARG_DialogDepartment) != null) {
+                dialogDepartment = (ArrayList<Dialog>) getArguments().getSerializable(ARG_DialogDepartment);
+                assert dialogDepartment != null;
+                Log.i(ARG_DialogDepartment, String.valueOf(dialogDepartment.size()));
             }
 
         }
@@ -121,6 +131,7 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
         tvTitle.setText(title);
         tvSubTitle.setText(subTitle);
 
+        api_interface = AppClient.getClient().create(API_Interface.class);
 
         adapter = new DialogAdapter(getDialogs(), new OnItemClickListener() {
             @Override
@@ -135,6 +146,7 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
 
 
     }
+
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -195,8 +207,8 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
 
 
         } else if (title.equals(getString(R.string.gender))) {
-            mdialogs.add(new Dialog(1,getString(R.string.male)));
-            mdialogs.add(new Dialog(2,getString(R.string.female)));
+            mdialogs.add(new Dialog(1, getString(R.string.male)));
+            mdialogs.add(new Dialog(2, getString(R.string.female)));
 
         } else if (title.equals(getString(R.string.academic_year))) {
             mdialogs.add(new Dialog("1"));
@@ -204,21 +216,13 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
             mdialogs.add(new Dialog("3"));
             mdialogs.add(new Dialog("4"));
         } else if (title.equals(getString(R.string.department))) {
-            if (academic_year == 1 | academic_year == 2) {
-                mdialogs.add(new Dialog(1,"GN"));
-                mdialogs.add(new Dialog(2,"SW"));
-                mdialogs.add(new Dialog(3,"BIO"));
-            } else if (academic_year == 3 | academic_year == 4) {
-                mdialogs.add(new Dialog(4,"CS"));
-                mdialogs.add(new Dialog(5,"IT"));
-                mdialogs.add(new Dialog(6,"IS"));
-                mdialogs.add(new Dialog(7,"SW"));
-                mdialogs.add(new Dialog(8,"BIO"));
-            }
-        }
-        else if(title.equals(getString(R.string.menu_settings))){
+            mdialogs = dialogDepartment;
+
+
+        } else if (title.equals(getString(R.string.menu_settings))) {
             mdialogs.add(new Dialog("English"));
             mdialogs.add(new Dialog("العربية"));
+
         }
 
 

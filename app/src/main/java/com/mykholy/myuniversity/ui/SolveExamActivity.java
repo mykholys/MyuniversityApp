@@ -274,11 +274,18 @@ public class SolveExamActivity extends AppCompatActivity implements FinishExamDi
     }
 
     private void finishExam() {
-        int hour = (int) ((mTotalTimeTaken) / 60 / 60);
-        int minutes = (int) ((mTotalTimeTaken) / 60);
-        int seconds = (int) ((mTotalTimeTaken) % 60);
+        String engStrTotalTime=LanguageHelper.arabicToDecimal(String.valueOf(mTotalTimeTaken));
+        long myTotalTimeTaken= Long.parseLong(engStrTotalTime);
+        Log.i("TotalTimeTaken_en", engStrTotalTime);
+        Log.i("TotalTimeTaken_long", String.valueOf(myTotalTimeTaken));
+        int hour = (int) ((myTotalTimeTaken) / 60 / 60);
+        int minutes = (int) ((myTotalTimeTaken) / 60);
+        int seconds = (int) ((myTotalTimeTaken) % 60);
         loadingView.start();
-        Call<Exam> call = api_interface.saveExam(token, new Exam(exam.geteId(), Constants.getSPreferences(this).getSTUDENT_ID(), score, String.format(Locale.getDefault(), "%02d:%02d:%02d", hour, minutes, seconds)));
+        String strTotalTime=String.format(Locale.US, "%02d:%02d:%02d", hour, minutes, seconds);
+        Log.i("TotalTimeTaken_strTime", strTotalTime);
+        Log.i("TotalTimeTaken_score", String.valueOf(score));
+        Call<Exam> call = api_interface.saveExam(token, new Exam(exam.geteId(), Constants.getSPreferences(this).getSTUDENT_ID(), score,strTotalTime ));
         if (countDownTimer != null)
             countDownTimer.cancel();
         if (ct != null)
@@ -298,6 +305,8 @@ public class SolveExamActivity extends AppCompatActivity implements FinishExamDi
                 } else {
                     Log.i("finishExam", "in else");
                     Log.i("finishExam", "in else" + response.toString());
+                    Log.i("finishExam", "in else" + call.request().toString());
+                    Log.i("finishExam", "in else" + Objects.requireNonNull(call.request().body()).toString());
 
                     //finishExam();
                 }
@@ -368,7 +377,7 @@ public class SolveExamActivity extends AppCompatActivity implements FinishExamDi
         int hour = (int) ((mTotalTimeTaken) / 60 / 60);
         int minutes = (int) ((mTotalTimeTaken) / 60);
         int seconds = (int) ((mTotalTimeTaken) % 60);
-        SolveExamActivity_txt_total_take_time.setText(String.format("%02d:%02d:%02d", hour, minutes, seconds));
+        SolveExamActivity_txt_total_take_time.setText(String.format(Locale.getDefault(),"%02d:%02d:%02d", hour, minutes, seconds));
     }
 
     private void startCountDown() {

@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case ID_NOTIFICATION:
                         select_fragment = new NotificationFragment();
                         meo.clearCount(ID_NOTIFICATION);
+                        Constants.getSPreferences(MainActivity.this).setNotificationCount(0);
                         break;
                     case ID_COURSE:
                         select_fragment = new CourseFragment();
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-Log.i("NotificationCount_main:", String.valueOf(Constants.getSPreferences(this).getNotificationCount()));
+        Log.i("NotificationCount_main:", String.valueOf(Constants.getSPreferences(this).getNotificationCount()));
         if (Constants.getSPreferences(this).getNotificationCount() != 0)
             meo.setCount(ID_NOTIFICATION, String.valueOf(Constants.getSPreferences(this).getNotificationCount()));
 

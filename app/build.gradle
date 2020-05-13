@@ -49,6 +49,7 @@ dependencies {
 //for retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    implementation  'com.squareup.okhttp:okhttp:2.6.0'
 
     //for loading
     implementation 'com.samigehi:loadingview:1.1'

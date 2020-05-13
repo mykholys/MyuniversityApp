@@ -10,7 +10,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.Toast;
+
 
 import com.mykholy.myuniversity.R;
 import com.mykholy.myuniversity.utilities.ConnectionUtils;
@@ -65,7 +65,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     private void CheckInternet() {
 
         if (ConnectionUtils.isConnected(this)) {
-            DynamicToast.makeSuccess(this, "Yes,Internet").show();
+          //  DynamicToast.makeSuccess(this, "Yes,Internet").show();
             if (Constants.getSPreferences(this).isLoggedIn()) {
                 Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
                 startActivity(intent);

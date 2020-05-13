@@ -203,8 +203,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void go_to_forgot_password(View view) {
-        Intent ForgotPasswordIntent = new Intent(this, ForgotPasswordActivity.class);
-        startActivity(ForgotPasswordIntent);
+//        Intent ForgotPasswordIntent = new Intent(this, ForgotPasswordActivity.class);
+//        startActivity(ForgotPasswordIntent);
     }
 
     public void go_to_sing_up(View view) {

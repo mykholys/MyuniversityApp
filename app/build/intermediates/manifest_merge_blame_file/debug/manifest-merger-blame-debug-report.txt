@@ -30,204 +30,209 @@
 18    <uses-permission android:name="android.permission.WAKE_LOCK" />
 18-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:12:5-68
 18-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:12:22-65
-19
-20    <!-- Required by older versions of Google Play services to create IID tokens -->
-21    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-21-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:26:5-82
-21-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:26:22-79
-22
-23    <application
-23-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:14:5-66:19
-24        android:name="com.mykholy.myuniversity.utilities.App"
-24-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:15:9-38
-25        android:allowBackup="true"
-25-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:16:9-35
-26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-26-->[androidx.core:core:1.3.0-alpha01] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\4f48761cb412bf7204e23a3094ee3c91\core-1.3.0-alpha01\AndroidManifest.xml:24:18-86
-27        android:debuggable="true"
-28        android:icon="@mipmap/ic_logo"
-28-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:17:9-39
-29        android:label="@string/app_name"
-29-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:18:9-41
-30        android:roundIcon="@mipmap/ic_logo"
-30-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:19:9-44
-31        android:supportsRtl="true"
-31-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:20:9-35
-32        android:testOnly="true"
-33        android:theme="@style/AppTheme" >
-33-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:21:9-40
-34        <activity
-34-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:24:9-27:76
-35            android:name="com.mykholy.myuniversity.ui.SolveExamActivity"
-35-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:25:13-49
-36            android:screenOrientation="portrait"
-36-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:26:13-49
-37            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-37-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:27:13-73
-38        <activity
-38-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:28:9-31:76
-39            android:name="com.mykholy.myuniversity.ui.DetailsCourseActivity"
-39-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:29:13-53
-40            android:screenOrientation="portrait"
-40-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:30:13-49
-41            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-41-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:31:13-73
-42        <activity
-42-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:32:9-35:76
-43            android:name="com.mykholy.myuniversity.ui.ForgotPasswordActivity"
-43-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:33:13-54
-44            android:screenOrientation="portrait"
-44-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:34:13-49
-45            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-45-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:35:13-73
-46        <activity
-46-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:36:9-40:76
-47            android:name="com.mykholy.myuniversity.ui.RegisterActivity"
-47-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:37:13-48
-48            android:parentActivityName="com.mykholy.myuniversity.ui.LoginActivity"
-48-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:38:13-59
-49            android:screenOrientation="portrait"
-49-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:39:13-49
-50            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-50-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:40:13-73
-51        <activity
-51-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:41:9-44:76
-52            android:name="com.mykholy.myuniversity.ui.LoginActivity"
-52-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:42:13-45
-53            android:screenOrientation="portrait"
-53-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:43:13-49
-54            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-54-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:44:13-73
-55        <activity
-55-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:45:9-54:20
-56            android:name="com.mykholy.myuniversity.ui.SplashScreenActivity"
-56-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:46:13-52
-57            android:screenOrientation="portrait"
-57-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:47:13-49
-58            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
-58-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:48:13-73
-59            <intent-filter>
-59-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:49:13-53:29
-60                <action android:name="android.intent.action.MAIN" />
-60-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:50:17-69
-60-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:50:25-66
-61
-62                <category android:name="android.intent.category.LAUNCHER" />
-62-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:52:17-77
-62-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:52:27-74
-63            </intent-filter>
-64        </activity>
-65        <activity
-65-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:55:9-58:76
-66            android:name="com.mykholy.myuniversity.ui.MainActivity"
-66-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:56:13-44
-67            android:screenOrientation="portrait"
-67-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:57:13-49
-68            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-68-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:58:13-73
-69
-70        <service android:name="com.mykholy.myuniversity.Service.MyFirebaseMessagingService" >
-70-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:60:9-64:19
-70-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:60:18-68
-71            <intent-filter>
-71-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:61:13-63:29
-72                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-72-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:62:17-78
-72-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:62:25-75
-73            </intent-filter>
-74        </service>
-75
-76        <!--
-77             FirebaseMessagingService performs security checks at runtime,
-78             no need for explicit permissions despite exported="true"
-79        -->
-80        <service
-80-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\48e52dca6d41fbe0de78d400604a093e\jetified-firebase-messaging-17.3.4\AndroidManifest.xml:28:9-34:19
-81            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-81-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\48e52dca6d41fbe0de78d400604a093e\jetified-firebase-messaging-17.3.4\AndroidManifest.xml:29:13-82
-82            android:exported="true" >
-82-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\48e52dca6d41fbe0de78d400604a093e\jetified-firebase-messaging-17.3.4\AndroidManifest.xml:30:13-36
-83            <intent-filter android:priority="-500" >
-83-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:61:13-63:29
-84                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-84-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:62:17-78
-84-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:62:25-75
-85            </intent-filter>
-86        </service>
-87        <service
-87-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:29:9-35:19
-88            android:name="com.google.firebase.components.ComponentDiscoveryService"
-88-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:30:13-84
-89            android:exported="false" >
-89-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:31:13-37
-90            <meta-data
-90-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:32:13-34:85
-91                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-91-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:33:17-96
-92                android:value="com.google.firebase.components.ComponentRegistrar" />
-92-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:34:17-82
-93        </service>
-94
-95        <receiver
-95-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:37:9-44:20
-96            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-96-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:38:13-78
-97            android:exported="true"
-97-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:39:13-36
-98            android:permission="com.google.android.c2dm.permission.SEND" >
-98-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:40:13-73
-99            <intent-filter>
-99-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:41:13-43:29
-100                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-100-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:42:17-81
-100-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:42:25-78
-101            </intent-filter>
-102        </receiver>
-103        <!--
-104             FirebaseInstanceIdService performs security checks at runtime,
-105             no need for explicit permissions despite exported="true"
-106        -->
-107        <service
-107-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:50:9-56:19
-108            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
-108-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:51:13-77
-109            android:exported="true" >
-109-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:52:13-36
-110            <intent-filter android:priority="-500" >
-110-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:53:13-55:29
-110-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:53:28-51
-111                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-111-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:54:17-80
-111-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:54:25-77
-112            </intent-filter>
-113        </service>
-114
-115        <provider
-115-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\941c40a22b5f6fc7ba2ebee1dfff20b6\jetified-firebase-common-16.0.3\AndroidManifest.xml:10:9-14:39
-116            android:name="com.google.firebase.provider.FirebaseInitProvider"
-116-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\941c40a22b5f6fc7ba2ebee1dfff20b6\jetified-firebase-common-16.0.3\AndroidManifest.xml:11:13-77
-117            android:authorities="com.mykholy.myuniversity.firebaseinitprovider"
-117-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\941c40a22b5f6fc7ba2ebee1dfff20b6\jetified-firebase-common-16.0.3\AndroidManifest.xml:12:13-72
-118            android:exported="false"
-118-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\941c40a22b5f6fc7ba2ebee1dfff20b6\jetified-firebase-common-16.0.3\AndroidManifest.xml:13:13-37
-119            android:initOrder="100" />
-119-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\941c40a22b5f6fc7ba2ebee1dfff20b6\jetified-firebase-common-16.0.3\AndroidManifest.xml:14:13-36
-120
-121        <activity
-121-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\d7d02101eba8bebe0e6e58328e372600\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
-122            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-122-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\d7d02101eba8bebe0e6e58328e372600\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
-123            android:exported="false"
-123-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\d7d02101eba8bebe0e6e58328e372600\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
-124            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-124-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\d7d02101eba8bebe0e6e58328e372600\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
-125
-126        <meta-data
-126-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\ec11415217263e6fb191529ec65475c6\jetified-play-services-basement-16.0.1\AndroidManifest.xml:23:9-25:69
-127            android:name="com.google.android.gms.version"
-127-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\ec11415217263e6fb191529ec65475c6\jetified-play-services-basement-16.0.1\AndroidManifest.xml:24:13-58
-128            android:value="@integer/google_play_services_version" />
-128-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\ec11415217263e6fb191529ec65475c6\jetified-play-services-basement-16.0.1\AndroidManifest.xml:25:13-66
-129    </application>
-130
-131</manifest>
+19    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+19-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:13:5-85
+19-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:13:22-82
+20    <uses-permission android:name="android.permission.VIBRATE" />
+20-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:14:5-66
+20-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:14:22-63
+21
+22    <!-- Required by older versions of Google Play services to create IID tokens -->
+23    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+23-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:26:5-82
+23-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:26:22-79
+24
+25    <application
+25-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:17:5-69:19
+26        android:name="com.mykholy.myuniversity.utilities.App"
+26-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:18:9-38
+27        android:allowBackup="true"
+27-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:19:9-35
+28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+28-->[androidx.core:core:1.3.0-alpha01] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\4f48761cb412bf7204e23a3094ee3c91\core-1.3.0-alpha01\AndroidManifest.xml:24:18-86
+29        android:debuggable="true"
+30        android:icon="@mipmap/ic_logo"
+30-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:20:9-39
+31        android:label="@string/app_name"
+31-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:21:9-41
+32        android:roundIcon="@mipmap/ic_logo"
+32-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:22:9-44
+33        android:supportsRtl="true"
+33-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:23:9-35
+34        android:theme="@style/AppTheme" >
+34-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:24:9-40
+35        <activity
+35-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:27:9-30:76
+36            android:name="com.mykholy.myuniversity.ui.SolveExamActivity"
+36-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:28:13-49
+37            android:screenOrientation="portrait"
+37-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:29:13-49
+38            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+38-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:30:13-73
+39        <activity
+39-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:31:9-34:76
+40            android:name="com.mykholy.myuniversity.ui.DetailsCourseActivity"
+40-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:32:13-53
+41            android:screenOrientation="portrait"
+41-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:33:13-49
+42            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+42-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:34:13-73
+43        <activity
+43-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:35:9-38:76
+44            android:name="com.mykholy.myuniversity.ui.ForgotPasswordActivity"
+44-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:36:13-54
+45            android:screenOrientation="portrait"
+45-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:37:13-49
+46            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+46-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:38:13-73
+47        <activity
+47-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:39:9-43:76
+48            android:name="com.mykholy.myuniversity.ui.RegisterActivity"
+48-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:40:13-48
+49            android:parentActivityName="com.mykholy.myuniversity.ui.LoginActivity"
+49-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:41:13-59
+50            android:screenOrientation="portrait"
+50-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:42:13-49
+51            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+51-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:43:13-73
+52        <activity
+52-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:44:9-47:76
+53            android:name="com.mykholy.myuniversity.ui.LoginActivity"
+53-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:45:13-45
+54            android:screenOrientation="portrait"
+54-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:46:13-49
+55            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+55-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:47:13-73
+56        <activity
+56-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:48:9-57:20
+57            android:name="com.mykholy.myuniversity.ui.SplashScreenActivity"
+57-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:49:13-52
+58            android:screenOrientation="portrait"
+58-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:50:13-49
+59            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+59-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:51:13-73
+60            <intent-filter>
+60-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:52:13-56:29
+61                <action android:name="android.intent.action.MAIN" />
+61-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:53:17-69
+61-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:53:25-66
+62
+63                <category android:name="android.intent.category.LAUNCHER" />
+63-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:55:17-77
+63-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:55:27-74
+64            </intent-filter>
+65        </activity>
+66        <activity
+66-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:58:9-61:76
+67            android:name="com.mykholy.myuniversity.ui.MainActivity"
+67-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:59:13-44
+68            android:screenOrientation="portrait"
+68-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:60:13-49
+69            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+69-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:61:13-73
+70
+71        <service android:name="com.mykholy.myuniversity.Service.MyFirebaseMessagingService" >
+71-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:63:9-67:19
+71-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:63:18-68
+72            <intent-filter>
+72-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:64:13-66:29
+73                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+73-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:65:17-78
+73-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:65:25-75
+74            </intent-filter>
+75        </service>
+76
+77        <!--
+78             FirebaseMessagingService performs security checks at runtime,
+79             no need for explicit permissions despite exported="true"
+80        -->
+81        <service
+81-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\48e52dca6d41fbe0de78d400604a093e\jetified-firebase-messaging-17.3.4\AndroidManifest.xml:28:9-34:19
+82            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+82-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\48e52dca6d41fbe0de78d400604a093e\jetified-firebase-messaging-17.3.4\AndroidManifest.xml:29:13-82
+83            android:exported="true" >
+83-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\48e52dca6d41fbe0de78d400604a093e\jetified-firebase-messaging-17.3.4\AndroidManifest.xml:30:13-36
+84            <intent-filter android:priority="-500" >
+84-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:64:13-66:29
+85                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+85-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:65:17-78
+85-->H:\Android_Studio\Projects\MyUniversity\app\src\main\AndroidManifest.xml:65:25-75
+86            </intent-filter>
+87        </service>
+88        <service
+88-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:29:9-35:19
+89            android:name="com.google.firebase.components.ComponentDiscoveryService"
+89-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:30:13-84
+90            android:exported="false" >
+90-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:31:13-37
+91            <meta-data
+91-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:32:13-34:85
+92                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+92-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:33:17-96
+93                android:value="com.google.firebase.components.ComponentRegistrar" />
+93-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:34:17-82
+94        </service>
+95
+96        <receiver
+96-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:37:9-44:20
+97            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+97-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:38:13-78
+98            android:exported="true"
+98-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:39:13-36
+99            android:permission="com.google.android.c2dm.permission.SEND" >
+99-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:40:13-73
+100            <intent-filter>
+100-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:41:13-43:29
+101                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+101-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:42:17-81
+101-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:42:25-78
+102            </intent-filter>
+103        </receiver>
+104        <!--
+105             FirebaseInstanceIdService performs security checks at runtime,
+106             no need for explicit permissions despite exported="true"
+107        -->
+108        <service
+108-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:50:9-56:19
+109            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+109-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:51:13-77
+110            android:exported="true" >
+110-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:52:13-36
+111            <intent-filter android:priority="-500" >
+111-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:53:13-55:29
+111-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:53:28-51
+112                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+112-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:54:17-80
+112-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\07c65421bad0e562f9548c432fad2579\jetified-firebase-iid-17.0.4\AndroidManifest.xml:54:25-77
+113            </intent-filter>
+114        </service>
+115
+116        <provider
+116-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\941c40a22b5f6fc7ba2ebee1dfff20b6\jetified-firebase-common-16.0.3\AndroidManifest.xml:10:9-14:39
+117            android:name="com.google.firebase.provider.FirebaseInitProvider"
+117-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\941c40a22b5f6fc7ba2ebee1dfff20b6\jetified-firebase-common-16.0.3\AndroidManifest.xml:11:13-77
+118            android:authorities="com.mykholy.myuniversity.firebaseinitprovider"
+118-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\941c40a22b5f6fc7ba2ebee1dfff20b6\jetified-firebase-common-16.0.3\AndroidManifest.xml:12:13-72
+119            android:exported="false"
+119-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\941c40a22b5f6fc7ba2ebee1dfff20b6\jetified-firebase-common-16.0.3\AndroidManifest.xml:13:13-37
+120            android:initOrder="100" />
+120-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\941c40a22b5f6fc7ba2ebee1dfff20b6\jetified-firebase-common-16.0.3\AndroidManifest.xml:14:13-36
+121
+122        <activity
+122-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\d7d02101eba8bebe0e6e58328e372600\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
+123            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+123-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\d7d02101eba8bebe0e6e58328e372600\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
+124            android:exported="false"
+124-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\d7d02101eba8bebe0e6e58328e372600\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
+125            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+125-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\d7d02101eba8bebe0e6e58328e372600\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
+126
+127        <meta-data
+127-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\ec11415217263e6fb191529ec65475c6\jetified-play-services-basement-16.0.1\AndroidManifest.xml:23:9-25:69
+128            android:name="com.google.android.gms.version"
+128-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\ec11415217263e6fb191529ec65475c6\jetified-play-services-basement-16.0.1\AndroidManifest.xml:24:13-58
+129            android:value="@integer/google_play_services_version" />
+129-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\ec11415217263e6fb191529ec65475c6\jetified-play-services-basement-16.0.1\AndroidManifest.xml:25:13-66
+130    </application>
+131
+132</manifest>

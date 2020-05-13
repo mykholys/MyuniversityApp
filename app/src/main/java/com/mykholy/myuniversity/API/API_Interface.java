@@ -1,6 +1,7 @@
 package com.mykholy.myuniversity.API;
 
 import com.mykholy.myuniversity.model.Course;
+import com.mykholy.myuniversity.model.Department;
 import com.mykholy.myuniversity.model.Exam;
 import com.mykholy.myuniversity.model.Lecture;
 import com.mykholy.myuniversity.model.Login;
@@ -10,6 +11,7 @@ import com.mykholy.myuniversity.model.Student;
 
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 
@@ -18,6 +20,8 @@ import retrofit2.http.Header;
 
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Streaming;
+import retrofit2.http.Url;
 
 public interface API_Interface {
     @POST("oauth/token")
@@ -63,6 +67,14 @@ public interface API_Interface {
     @GET("api/studentNotification/{AcademicYear}/notification/{DeptID}")
     Call<List<Notification>> getAllNotifications(@Header("Authorization") String header, @Path("AcademicYear") int AcademicYear, @Path("DeptID") int DeptID);
 
+    @GET("api/student/departments")
+    Call<List<Department>> getAllDepartments();
+
+
+
+    @Streaming
+    @GET
+    Call<ResponseBody> downloadFileWithDynamicUrlAsync(@Url String fileUrl);
 
 
 

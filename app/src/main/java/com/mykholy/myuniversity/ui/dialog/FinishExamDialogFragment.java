@@ -80,7 +80,7 @@ public class FinishExamDialogFragment extends DialogFragment {
         setUi(view);
         Log.i("Score_mS", String.valueOf(mScore));
         Log.i("Score_mQ", String.valueOf(mQuestionTotal));
-        if (mScore < mQuestionTotal) setFail();
+        if (mScore < mQuestionTotal/2) setFail();
         else
             setPass();
 

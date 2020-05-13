@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -61,6 +62,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class DetailsCourseActivity extends AppCompatActivity implements SortDialogFragment.OnFragmentInteractionListener, ExamFragment.OnFragmentInteractionListener, LectureFragment.OnFragmentInteractionListener {
+    private static final String TAG = "DownloadFile";
     private Toolbar DetailsCourseActivity_toolbar;
     private TabLayout DetailsCourseActivity_tab_layout;
     private ViewPager main_pager;
@@ -224,12 +226,12 @@ public class DetailsCourseActivity extends AppCompatActivity implements SortDial
 
     @Override
     public void onFragmentInteraction(Lecture lecture) {
+        this.lecture = lecture;
+        urlLecFile = AppClient.BASE_URL + "public/images/Lecture/" + lecture.getFile();
+        Log.i("url:", urlLecFile);
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
         } else {
-            this.lecture = lecture;
-            urlLecFile = AppClient.BASE_URL + "public/images/Lecture/" + lecture.getFile();
-            Log.i("url:", urlLecFile);
             if (!checkIsFileExist(urlLecFile))
                 ben_downloadsFile();
             else {
@@ -245,7 +247,7 @@ public class DetailsCourseActivity extends AppCompatActivity implements SortDial
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == WRITE_EX_REQ_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                DynamicToast.makeSuccess(this, "Permission generated").show();
+                // DynamicToast.makeSuccess(this, "Permission generated").show();
                 if (!checkIsFileExist(urlLecFile))
                     ben_downloadsFile();
                 else {
@@ -258,17 +260,56 @@ public class DetailsCourseActivity extends AppCompatActivity implements SortDial
 
     }
 
+    @SuppressLint("StaticFieldLeak")
     private void ben_downloadsFile() {
 
         progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("file  download");
-        progressDialog.setMessage("file is start download");
+        progressDialog.setTitle(getString(R.string.download_file));
+        progressDialog.setMessage(getString(R.string.downloading_file));
         progressDialog.setIndeterminate(true);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         progressDialog.setCancelable(false);
-        Toast.makeText(this, "isExternalStorageReadable:" + isExternalStorageReadable(), Toast.LENGTH_LONG).show();
+        // Toast.makeText(this, "isExternalStorageReadable:" + isExternalStorageReadable(), Toast.LENGTH_LONG).show();
         MyDownloadTask myDownloadTask = new MyDownloadTask(this);
         myDownloadTask.execute(urlLecFile);
+
+
+//        new AsyncTask<Void, Long, Void>() {
+//
+//            @Override
+//            protected Void doInBackground(Void... voids) {
+//                Call<ResponseBody> call = api_interface.downloadFileWithDynamicUrlAsync(urlLecFile);
+//                call.enqueue(new Callback<ResponseBody>() {
+//                    @Override
+//                    public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+//                        Log.d(TAG, "Response:"+response.toString());
+//                        if (response.isSuccessful()) {
+//
+//                            assert response.body() != null;
+//                            Log.d(TAG, "isSuccessfulBody:"+response.body().toString());
+//                            Log.d(TAG, "server contacted and has file");
+//
+//                            boolean writtenToDisk = writeResponseBodyToDisk(response.body());
+//
+//                            Log.d(TAG, "file download was a success? " + writtenToDisk);
+//                        }
+//                        else {
+//                            Log.d(TAG, "server contact failed");
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
+//                        Log.d(TAG, "onFailure"+t.getMessage());
+//                        Log.d(TAG, "onFailure"+call.request().toString());
+//                        Log.d(TAG, "onFailure"+ Objects.requireNonNull(call.request().body()).toString());
+//                    }
+//                });
+//
+//                return null;
+//            }
+//        }.execute();
+
 
     }
 
@@ -381,11 +422,11 @@ public class DetailsCourseActivity extends AppCompatActivity implements SortDial
             super.onPreExecute();
             PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
             wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, getClass().getName());
-            wakeLock.acquire(10*60*1000L /*10 minutes*/);
+            wakeLock.acquire(10 * 60 * 1000L /*10 minutes*/);
 
             progressDialog.show();
             path = Environment.getExternalStorageDirectory().getAbsolutePath();
-            Toast.makeText(context, "path:" + path, Toast.LENGTH_LONG).show();
+            //  Toast.makeText(context, "path:" + path, Toast.LENGTH_LONG).show();
 
         }
 
@@ -427,5 +468,57 @@ public class DetailsCourseActivity extends AppCompatActivity implements SortDial
         }
 
 
+    }
+
+
+    private boolean writeResponseBodyToDisk(ResponseBody body) {
+        try {
+            String[] file = urlLecFile.split("/");
+            // todo change the file location/name according to your needs
+            //File futureStudioIconFile = new File(getExternalFilesDir(null) + File.separator + "Future Studio Icon.png");
+            File futureStudioIconFile = new File(getExternalFilesDir("Download"), file[file.length - 1]);
+            InputStream inputStream = null;
+            OutputStream outputStream = null;
+
+            try {
+                byte[] fileReader = new byte[4096];
+
+                long fileSize = body.contentLength();
+                long fileSizeDownloaded = 0;
+
+                inputStream = body.byteStream();
+                outputStream = new FileOutputStream(futureStudioIconFile);
+
+                while (true) {
+                    int read = inputStream.read(fileReader);
+
+                    if (read == -1) {
+                        break;
+                    }
+
+                    outputStream.write(fileReader, 0, read);
+
+                    fileSizeDownloaded += read;
+
+                    Log.d(TAG, "file download: " + fileSizeDownloaded + " of " + fileSize);
+                }
+
+                outputStream.flush();
+
+                return true;
+            } catch (IOException e) {
+                return false;
+            } finally {
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+
+                if (outputStream != null) {
+                    outputStream.close();
+                }
+            }
+        } catch (IOException e) {
+            return false;
+        }
     }
 }

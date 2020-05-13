@@ -4,14 +4,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class SPreferences {
-    protected final String TOKEN = "token";
-    protected final String TYPE_TOKEN = "type_token";
-    protected final String REFRESH_TOKEN = "refresh_token";
-    protected final String LOGIN = "login";
-    protected final String USERNAME = "userName";
-    protected final String PHONE = "phone";
-    protected final String LANGUAGE = "language";
-    protected final String NOTIFICATION_COUNT = "notification_count";
+    private final String TOKEN = "token";
+    private final String TYPE_TOKEN = "type_token";
+    private final String REFRESH_TOKEN = "refresh_token";
+    private final String LOGIN = "login";
+    private final String USERNAME = "userName";
+    private final String PHONE = "phone";
+    private final String LANGUAGE = "language";
+    private final String NOTIFICATION_COUNT = "notification_count";
 
     //student
     private final String STUDENT_ID = "student_id";
@@ -107,7 +107,7 @@ public class SPreferences {
     }
 
     public String getSTUDENT_IMAGE() {
-        return sp.getString(STUDENT_IMAGE, "Nan");
+        return sp.getString(STUDENT_IMAGE, "avatar.png");
 
     }
 
@@ -167,7 +167,21 @@ public class SPreferences {
 
     //-----------------
     public void setClearAll() {
-        sp.edit().clear().apply();
+        sp.edit().remove(TOKEN).apply();
+        sp.edit().remove(TYPE_TOKEN).apply();
+        sp.edit().remove(REFRESH_TOKEN).apply();
+        sp.edit().remove(LOGIN).apply();
+        sp.edit().remove(USERNAME).apply();
+        sp.edit().remove(LANGUAGE).apply();
+        sp.edit().remove(NOTIFICATION_COUNT).apply();
+        sp.edit().remove(STUDENT_ID).apply();
+        sp.edit().remove(STUDENT_NAME).apply();
+        sp.edit().remove(STUDENT_IMAGE).apply();
+        sp.edit().remove(STUDENT_ACADEMIC_YEAR).apply();
+        sp.edit().remove(STUDENT_DEPT_ID).apply();
+        sp.edit().remove(STUDENT_DEPT_NAME).apply();
+
+
     }
 
 

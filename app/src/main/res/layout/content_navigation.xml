@@ -40,6 +40,7 @@
             android:fontFamily="@font/roboto_medium"
             android:text="@string/table"
             android:textColor="@color/white"
+            android:visibility="invisible"
             android:textSize="@dimen/_16ssp" />
 
         <TextView

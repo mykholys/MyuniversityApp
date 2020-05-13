@@ -37,7 +37,6 @@
 
     <string name="birthdate">Birthdate</string>
     <string name="birthdate_required">birthdate required</string>
-    <string name="birthdate_not_valid">birthdate not valid</string>
 
 
     <string name="state">State</string>
@@ -56,7 +55,6 @@
     <string name="choose_department">Choose Department</string>
     <string name="department_required">department required</string>
 
-    <string name="register">Register</string>
     <string name="already_have_an_account">Already have an account ?</string>
     <string name="sing_in">Sing in</string>
 
@@ -100,8 +98,6 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="openDrawer">open_drawer</string>
-    <string name="closeDrawer">close_drawer</string>
     <string name="code_has_been_sent_to_reset_a_new_password">Code has been sent to reset a new password</string>
     <string name="you_will_shortly_receive_an_email_with_a_code_to_setup_a_new_password">You will shortly receive an email with a code to setup a new password</string>
     <string name="done">Done</string>
@@ -119,7 +115,6 @@
     <string name="password_not_match">the new password and confirmation password do not match</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="title">Title</string>
     <string name="start_date">Start Date</string>
     <string name="end_date">End Date</string>
@@ -138,7 +133,6 @@
     <string name="question">"Question  "</string>
     <string name="please_complete_exam">Please complete exam</string>
     <string name="submit">submit</string>
-    <string name="congrats" translatable="false">Congrats</string>
     <string name="you_failed">Unfortunately you failed</string>
     <string name="your_result">"Your result is  "</string>
     <string name="you_passed">Congratulations, you succeeded</string>
@@ -148,7 +142,6 @@
     <string name="info_updated">Your information has been successfully updated</string>
     <string name="current_password_incorrect">Current password incorrect</string>
     <string name="there_are_no_lectures">There are no lectures</string>
-    <string name="there_are_no_courses">There are no courses</string>
     <string name="there_are_no_exams">There are no exams</string>
     <string name="there_are_no_notifications">There are no notifications</string>
     <string name="can_not_enter_exam_before_time">You cannot enter the exam before the time it begin</string>
@@ -156,11 +149,13 @@
     <string name="exam_expired">You cannot enter the exam, The exam time has expired</string>
     <string name="subject_email">Menoufia University - student</string>
     <string name="my_problem">My problem is ...</string>
-    <string name="my_name">My name is</string>
+    <string name="my_name">My name is  </string>
     <string name="name_ahmed_salah_el_kholy">Name : Ahmed Salah El-kholy</string>
     <string name="https_m_me_3syer" translatable="false">https://m.me/3syer</string>
     <string name="_201064754874" translatable="false">+201064754874</string>
     <string name="notifications">Notifications</string>
+    <string name="download_file">Download File</string>
+    <string name="downloading_file">File is being downloading…</string>
 
 
 </resources>

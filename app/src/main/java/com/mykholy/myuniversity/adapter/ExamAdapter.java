@@ -17,6 +17,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -71,10 +72,7 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.MyViewHolder> 
                 holder.rec_exam_un_solve_status.setBackgroundResource(R.drawable.bg_finished);
             }
 
-            if (Constants.getSPreferences(context).getLanguage().equals("ar")) {
-                holder.rec_exam_un_solve_start_time.setGravity(Gravity.END);
-                holder.rec_exam_un_solve_end_time.setGravity(Gravity.END);
-            }
+
             holder.rec_exam_un_solve_ly.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -84,7 +82,7 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.MyViewHolder> 
         } else {
             holder.rec_exam_solve_exam_name.setText(exam.getTitle());
             holder.rec_exam_solve_time_taken.setText(exam.getTimeSpend());
-            holder.rec_exam_solve_result.setText(String.format("%d/%d", exam.getResult(), exam.getNum_questions()));
+            holder.rec_exam_solve_result.setText(String.format(Locale.getDefault(),"%d/%d", exam.getResult(), exam.getNum_questions()));
             holder.rec_exam_solve_ly.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

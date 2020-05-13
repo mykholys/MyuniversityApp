@@ -124,7 +124,7 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int sp_example = 0x7f0c007c;
-        public static final int ssp_example = 0x7f0c007d;
+        public static final int sp_example = 0x7f0c0079;
+        public static final int ssp_example = 0x7f0c007a;
     }
 }

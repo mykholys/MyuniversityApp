@@ -24,6 +24,7 @@ import com.github.loadingview.LoadingView;
 import com.mykholy.myuniversity.API.API_Interface;
 import com.mykholy.myuniversity.API.AppClient;
 import com.mykholy.myuniversity.R;
+import com.mykholy.myuniversity.model.Department;
 import com.mykholy.myuniversity.model.Dialog;
 import com.mykholy.myuniversity.model.ErrorStudentRegister;
 import com.mykholy.myuniversity.model.Student;
@@ -31,12 +32,15 @@ import com.mykholy.myuniversity.ui.dialog.DialogFragment;
 import com.mykholy.myuniversity.utilities.Check;
 import com.mykholy.myuniversity.utilities.ConnectionUtils;
 import com.mykholy.myuniversity.utilities.ErrorUtils;
+import com.mykholy.myuniversity.utilities.LanguageHelper;
 import com.pranavpandey.android.dynamic.toasts.DynamicToast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 
 public class RegisterActivity extends AppCompatActivity implements DialogFragment.OnFragmentInteractionListener, View.OnClickListener, TextWatcher {
@@ -53,6 +57,7 @@ public class RegisterActivity extends AppCompatActivity implements DialogFragmen
     private LoadingView loadingView;
 
     private API_Interface api_interface;
+    ArrayList<Dialog> mdialogs = new ArrayList<>();
 
 
     @Override
@@ -64,6 +69,7 @@ public class RegisterActivity extends AppCompatActivity implements DialogFragmen
         setUi();
         setApi();
         setListener();
+        AllDepartment();
 
 
     }
@@ -226,7 +232,7 @@ public class RegisterActivity extends AppCompatActivity implements DialogFragmen
                 if (Register_et_academic_year.getText().toString().isEmpty()) {
                     DynamicToast.makeWarning(this, getString(R.string.academy_year_chosen)).show();
                 } else {
-                    fragment = DialogFragment.newInstance(getString(R.string.department), getString(R.string.choose_department), Integer.parseInt(Register_et_academic_year.getText().toString()));
+                    fragment = DialogFragment.newInstance(getString(R.string.department), getString(R.string.choose_department), mdialogs);
                     fragment.show(getSupportFragmentManager(), null);
                 }
                 break;
@@ -251,7 +257,30 @@ public class RegisterActivity extends AppCompatActivity implements DialogFragmen
 
     }
 
+private void AllDepartment(){
 
+    Call<List<Department>> call = api_interface.getAllDepartments();
+    call.enqueue(new Callback<List<Department>>() {
+        @Override
+        public void onResponse(@NonNull Call<List<Department>> call, @NonNull Response<List<Department>> response) {
+            if (response.isSuccessful()) {
+                assert response.body() != null;
+                List<Department> departments = new ArrayList<>(response.body());
+                for (int i = 0; i < departments.size(); i++) {
+                    mdialogs.add(new Dialog(departments.get(i).getDeptID(), departments.get(i).getName()));
+                }
+                Log.i("department:", "Successful");
+
+            }
+
+        }
+
+        @Override
+        public void onFailure(@NonNull Call<List<Department>> call, @NonNull Throwable t) {
+            Log.i("onFailure:", t.getMessage());
+        }
+    });
+}
     public void go_to_sing_in(View view) {
         finish();
     }
@@ -317,8 +346,8 @@ public class RegisterActivity extends AppCompatActivity implements DialogFragmen
                     e.printStackTrace();
                 }
                 String newstring = new SimpleDateFormat("yyyy-MM-dd").format(date);
-                Log.i("Register_et_birthdate:", arabicToDecimal(newstring)); //to convert english
-                Register_et_birthdate.setText(newstring);
+                Log.i("Register_et_birthdate:", LanguageHelper.arabicToDecimal(newstring)); //to convert english
+                Register_et_birthdate.setText(LanguageHelper.arabicToDecimal(newstring));
                 Register_et_birthdate.setError(null);
                 Register_et_birthdate.setBackgroundResource(R.drawable.custom_bg_et);
 
@@ -531,18 +560,7 @@ public class RegisterActivity extends AppCompatActivity implements DialogFragmen
 
     }
 
-    private static String arabicToDecimal(String number) {
-        char[] chars = new char[number.length()];
-        for (int i = 0; i < number.length(); i++) {
-            char ch = number.charAt(i);
-            if (ch >= 0x0660 && ch <= 0x0669)
-                ch -= 0x0660 - '0';
-            else if (ch >= 0x06f0 && ch <= 0x06F9)
-                ch -= 0x06f0 - '0';
-            chars[i] = ch;
-        }
-        return new String(chars);
-    }
+
 
 
     @Override

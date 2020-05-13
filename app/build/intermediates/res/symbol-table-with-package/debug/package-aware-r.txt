@@ -2276,7 +2276,6 @@ drawable custom_bg_et_error
 drawable custom_bg_toolbar
 drawable custom_bg_toolbar_course_ltr
 drawable custom_bg_toolbar_course_rtl
-drawable custom_bg_toolbar_main
 drawable custom_login_card
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
@@ -2288,21 +2287,18 @@ drawable forgot_dialog_iv
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_about_us
-drawable ic_arrow_back_black
 drawable ic_arrow_drop_down
 drawable ic_call
 drawable ic_check
-drawable ic_circle
 drawable ic_circle_sort
 drawable ic_contact_us
 drawable ic_course
 drawable ic_date
 drawable ic_download
 drawable ic_facebook
-drawable ic_launcher_background
-drawable ic_launcher_foreground
 drawable ic_lec
 drawable ic_location
+drawable ic_log_iv
 drawable ic_logout
 drawable ic_menu
 drawable ic_mtrl_checked_circle
@@ -2310,11 +2306,9 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_notification
-drawable ic_notifications
 drawable ic_person
 drawable ic_settings
 drawable ic_sort
-drawable ic_spin
 drawable ic_table
 drawable ic_time
 drawable logo_iv
@@ -2355,7 +2349,6 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable online_course
-drawable radio_button_inset
 drawable students
 drawable study
 drawable test_custom_background
@@ -2629,7 +2622,6 @@ id listMode
 id list_item
 id loadingView
 id loading_view
-id location
 id login_btn_login
 id login_et_email
 id login_et_password
@@ -2681,10 +2673,6 @@ id multiply
 id nav_view_notification
 id navigationView
 id navigation_header_container
-id navigation_header_email
-id navigation_header_fullName
-id navigation_header_imageProfile
-id navigation_header_setting
 id never
 id noScroll
 id none
@@ -2791,7 +2779,6 @@ id study_iv
 id submenuarrow
 id submit_area
 id tabMode
-id table
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -2916,8 +2903,6 @@ layout adt_layout_hint
 layout adt_layout_toast
 layout content_navigation
 layout custom_dialog
-layout custom_spinner
-layout custom_spinner_dropdown
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2975,7 +2960,6 @@ layout mtrl_picker_header_toggle
 layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout nav_drawer
-layout nav_header
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -3017,7 +3001,6 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
-menu nav_menu
 mipmap ic_logo
 plurals mtrl_badge_content_description
 string Exams
@@ -3070,7 +3053,6 @@ string asyut
 string beheira
 string beni_suef
 string birthdate
-string birthdate_not_valid
 string birthdate_required
 string bottom_sheet_behavior
 string cairo
@@ -3085,7 +3067,6 @@ string choose_department
 string choose_gender
 string choose_state
 string clear_text_end_icon_content_description
-string closeDrawer
 string code_has_been_sent_to_reset_a_new_password
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
@@ -3106,7 +3087,6 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string confirm_new_password
-string congrats
 string contact_us
 string create_an_account
 string current_password
@@ -3118,6 +3098,8 @@ string department
 string department_required
 string don_t_have_an_account
 string done
+string download_file
+string downloading_file
 string email
 string email_not_valid
 string email_pass_incorrect
@@ -3148,7 +3130,6 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
-string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string https_m_me_3syer
 string icon_content_description
@@ -3214,7 +3195,6 @@ string next
 string no_internet
 string north_sina
 string notifications
-string openDrawer
 string password
 string password_confirmation_required
 string password_current_required
@@ -3240,7 +3220,6 @@ string qalyubia
 string qena
 string question
 string red_sea
-string register
 string reset_password
 string result
 string search_menu_title
@@ -3259,7 +3238,6 @@ string subject_email
 string submit
 string suez
 string table
-string there_are_no_courses
 string there_are_no_exams
 string there_are_no_lectures
 string there_are_no_notifications
